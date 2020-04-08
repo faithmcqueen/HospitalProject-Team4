@@ -1,0 +1,47 @@
+﻿@{
+  ViewBag.Title = "Add";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add New Volunteer</title>
+</head>
+<body>
+    <div>
+        <form method="POST" action="/VolunteerRecruitment/Add">
+            <div class="sectionheader">Account Details</div>
+            <div class="inpfield"><span>User Name:</span>
+                <input type="text" name="Username" id="Username" />
+            </div>
+            <div class="inpfield"><span>Email:</span>
+                <input type="text" name="Useremail" id="Useremail" />
+            </div>
+            <div class="inpfield"><span>Password:</span>
+                <input type="password" name="Userpass" id="Userpass" />
+            </div>
+
+            <div class="sectionheader">Groomer Details</div>
+            <div class="inpfield"><span>First Name:</span>
+                <input id="GroomerFName" type="text" name="GroomerFname" />
+            </div>
+            <div class="inpfield"><span>Last Name:</span>
+                <input id="GroomerLName" type="text" name="GroomerLName" />
+            </div>
+            <div class="inpfield"><span>Rate:</span> 
+                <input id="GroomerRate" type="text" name="GroomerRate" />
+            </div>
+            <div class="inpfield"><span>DOB (yyyy-mm-dd):</span>
+                <input id="GroomerDOB" type="text" name="GroomerDOB" />
+            </div>
+
+            <div class="inpfield">
+                <input type="submit" value="Add Volunteer">
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

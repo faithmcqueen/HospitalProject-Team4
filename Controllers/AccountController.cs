@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using HospitalProject_Team4.Models;
+using HospitalProject_Team4.Data;
 
 namespace HospitalProject_Team4.Controllers
 {
@@ -151,6 +152,7 @@ namespace HospitalProject_Team4.Controllers
         {
             if (ModelState.IsValid)
             {
+                //file modified
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

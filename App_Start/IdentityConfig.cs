@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using HospitalProject_Team4.Models;
+using HospitalProject_Team4.Data;
 
 namespace HospitalProject_Team4
 {
@@ -42,7 +43,9 @@ namespace HospitalProject_Team4
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
         {
-            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
+                ///changed file
+            //.Get(HospitalProjectContext)
+            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<HospitalProjectContext>()));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
             {
