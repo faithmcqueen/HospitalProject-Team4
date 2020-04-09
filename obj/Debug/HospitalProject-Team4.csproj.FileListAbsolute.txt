@@ -222,9 +222,13 @@ C:\Users\SiMrAn\Documents\zsem2\MobileApp\GitHub\HospitalProject-Team4\bin\Micro
 C:\Users\SiMrAn\Documents\zsem2\MobileApp\GitHub\HospitalProject-Team4\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\SiMrAn\Documents\zsem2\MobileApp\GitHub\HospitalProject-Team4\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\SiMrAn\Documents\zsem2\MobileApp\GitHub\HospitalProject-Team4\obj\Debug\HospitalProject-Team4.csprojAssemblyReference.cache
+C:\Users\SiMrAn\Documents\zsem2\MobileApp\GitHub\HospitalProject-Team4\obj\Debug\HospitalProject_Team4.Migrations.initials.resources
+C:\Users\SiMrAn\Documents\zsem2\MobileApp\GitHub\HospitalProject-Team4\obj\Debug\HospitalProject_Team4.Migrations.FAQ.resources
+C:\Users\SiMrAn\Documents\zsem2\MobileApp\GitHub\HospitalProject-Team4\obj\Debug\HospitalProject-Team4.csproj.GenerateResource.cache
 C:\Users\SiMrAn\Documents\zsem2\MobileApp\GitHub\HospitalProject-Team4\obj\Debug\HospitalProject-Team4.csproj.CoreCompileInputs.cache
 C:\Users\SiMrAn\Documents\zsem2\MobileApp\GitHub\HospitalProject-Team4\obj\Debug\HospitalProject-Team4.csproj.CopyComplete
 C:\Users\SiMrAn\Documents\zsem2\MobileApp\GitHub\HospitalProject-Team4\obj\Debug\HospitalProject-Team4.dll
 C:\Users\SiMrAn\Documents\zsem2\MobileApp\GitHub\HospitalProject-Team4\obj\Debug\HospitalProject-Team4.pdb
-C:\Users\SiMrAn\Documents\zsem2\MobileApp\GitHub\HospitalProject-Team4\obj\Debug\HospitalProject_Team4.Migrations.initials.resources
-C:\Users\SiMrAn\Documents\zsem2\MobileApp\GitHub\HospitalProject-Team4\obj\Debug\HospitalProject-Team4.csproj.GenerateResource.cache
+C:\Users\SiMrAn\Documents\zsem2\MobileApp\GitHub\HospitalProject-Team4\bin\Ubiety.Logging.Core.dll
+C:\Users\SiMrAn\Documents\zsem2\MobileApp\GitHub\HospitalProject-Team4\bin\Ubiety.Dns.Core.xml
+C:\Users\SiMrAn\Documents\zsem2\MobileApp\GitHub\HospitalProject-Team4\bin\Ubiety.Logging.Core.xml
