@@ -29,7 +29,7 @@ namespace HospitalProject_Team4.Data
 
         //A logged in user could be an volunteer
         public virtual VolunteerRecruitment volunteer { get; set; }
-        public virtual AspNetUsers AspNetUsers { get; set; }
+       
 
         //A logged in user could be an Admin
     }
@@ -42,10 +42,9 @@ namespace HospitalProject_Team4.Data
         {
             return new HospitalProjectContext();
         }
-        public System.Data.Entity.DbSet<HospitalProject_Team4.Models.AspNetRoles> AspNetRoles { get; set; }
-        public System.Data.Entity.DbSet<HospitalProject_Team4.Models.AspNetUserRoles> AspNetUserRoles { get; set; }
+       
         public System.Data.Entity.DbSet<HospitalProject_Team4.Models.Donation> Donation { get; set; }
-        public System.Data.Entity.DbSet<HospitalProject_Team4.Models.AspNetUsers> AspNetUsers { get; set; }
+        
         public System.Data.Entity.DbSet<HospitalProject_Team4.Models.VolunteerRecruitment> volunteerRecruitment { get; set; }
     }
 }

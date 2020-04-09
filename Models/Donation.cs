@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HospitalProject_Team4.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,14 +10,9 @@ namespace HospitalProject_Team4.Models
 {
     public class Donation
     {
-        [Key]
-        public int DonationID { get; set; }
-
-        /*----------foreign key to users table -----------------*/
-        public int user_id { get; set; }
-        [ForeignKey("user_id")]
-        public virtual AspNetUsers AspNetUsers { get; set; }
-
+        [Key, ForeignKey("ApplicationUser")]
+        public string DonationID { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
 
         public string donor_mail { get; set; }

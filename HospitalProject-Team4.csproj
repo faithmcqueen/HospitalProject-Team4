@@ -195,19 +195,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004080350540_initial.cs" />
-    <Compile Include="Migrations\202004080350540_initial.Designer.cs">
-      <DependentUpon>202004080350540_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004080454470_volunteer.cs" />
-    <Compile Include="Migrations\202004080454470_volunteer.Designer.cs">
-      <DependentUpon>202004080454470_volunteer.cs</DependentUpon>
+    <Compile Include="Migrations\202004090154168_initials.cs" />
+    <Compile Include="Migrations\202004090154168_initials.Designer.cs">
+      <DependentUpon>202004090154168_initials.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AspNetRoles.cs" />
-    <Compile Include="Models\AspNetUserRoles.cs" />
-    <Compile Include="Models\AspNetUsers.cs" />
     <Compile Include="Models\Donation.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -290,11 +283,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004080350540_initial.resx">
-      <DependentUpon>202004080350540_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004080454470_volunteer.resx">
-      <DependentUpon>202004080454470_volunteer.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004090154168_initials.resx">
+      <DependentUpon>202004090154168_initials.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
