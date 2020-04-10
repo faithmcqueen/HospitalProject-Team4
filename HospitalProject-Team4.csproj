@@ -191,11 +191,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-<<<<<<< HEAD
     <Compile Include="Controllers\DonationController.cs" />
-=======
     <Compile Include="Controllers\FAQController.cs" />
->>>>>>> 8dedf877362ac33db71e3dcf13a02183c864aabb
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\VolunteerRecruitmentController.cs" />
@@ -203,13 +200,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004090323135_volunteer.cs" />
-    <Compile Include="Migrations\202004090323135_volunteer.Designer.cs">
-      <DependentUpon>202004090323135_volunteer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004090412010_FAQ.cs" />
-    <Compile Include="Migrations\202004090412010_FAQ.Designer.cs">
-      <DependentUpon>202004090412010_FAQ.cs</DependentUpon>
+    <Compile Include="Migrations\202004102146332_initial.cs" />
+    <Compile Include="Migrations\202004102146332_initial.Designer.cs">
+      <DependentUpon>202004102146332_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -278,7 +271,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\VolunteerRecruitment\Add.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\VolunteerRecruitment\Update.cshtml" />
     <Content Include="Views\VolunteerRecruitment\List.cshtml" />
     <Content Include="Views\VolunteerRecruitment\Show.cshtml" />
@@ -288,9 +280,7 @@
     <Content Include="Views\Donation\List.cshtml" />
     <Content Include="Views\Donation\Show.cshtml" />
     <Content Include="Views\Donation\Update.cshtml" />
-=======
     <Content Include="Views\FAQ\ViewFAQ.cshtml" />
->>>>>>> 8dedf877362ac33db71e3dcf13a02183c864aabb
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -311,11 +301,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004090323135_volunteer.resx">
-      <DependentUpon>202004090323135_volunteer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004090412010_FAQ.resx">
-      <DependentUpon>202004090412010_FAQ.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004102146332_initial.resx">
+      <DependentUpon>202004102146332_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
