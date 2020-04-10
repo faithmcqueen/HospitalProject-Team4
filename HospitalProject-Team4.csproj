@@ -119,8 +119,11 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>packages\MySql.Data.8.0.19\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    <Reference Include="Ubiety.Dns.Core, Version=4.1.2.0, Culture=neutral, PublicKeyToken=62d65a2efdde5827, processorArchitecture=MSIL">
+      <HintPath>packages\Ubiety.Dns.Core.4.1.2\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Ubiety.Logging.Core, Version=1.2.2.0, Culture=neutral, PublicKeyToken=133e143470e66433, processorArchitecture=MSIL">
+      <HintPath>packages\Ubiety.Logging.Core.1.2.2\lib\net452\Ubiety.Logging.Core.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -188,7 +191,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\DonationController.cs" />
+=======
+    <Compile Include="Controllers\FAQController.cs" />
+>>>>>>> 8dedf877362ac33db71e3dcf13a02183c864aabb
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\VolunteerRecruitmentController.cs" />
@@ -200,9 +207,14 @@
     <Compile Include="Migrations\202004090323135_volunteer.Designer.cs">
       <DependentUpon>202004090323135_volunteer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004090412010_FAQ.cs" />
+    <Compile Include="Migrations\202004090412010_FAQ.Designer.cs">
+      <DependentUpon>202004090412010_FAQ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Donation.cs" />
+    <Compile Include="Models\FAQ.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\VolunteerRecruitment.cs" />
@@ -266,6 +278,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\VolunteerRecruitment\Add.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\VolunteerRecruitment\Update.cshtml" />
     <Content Include="Views\VolunteerRecruitment\List.cshtml" />
     <Content Include="Views\VolunteerRecruitment\Show.cshtml" />
@@ -275,6 +288,9 @@
     <Content Include="Views\Donation\List.cshtml" />
     <Content Include="Views\Donation\Show.cshtml" />
     <Content Include="Views\Donation\Update.cshtml" />
+=======
+    <Content Include="Views\FAQ\ViewFAQ.cshtml" />
+>>>>>>> 8dedf877362ac33db71e3dcf13a02183c864aabb
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -297,6 +313,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202004090323135_volunteer.resx">
       <DependentUpon>202004090323135_volunteer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004090412010_FAQ.resx">
+      <DependentUpon>202004090412010_FAQ.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
