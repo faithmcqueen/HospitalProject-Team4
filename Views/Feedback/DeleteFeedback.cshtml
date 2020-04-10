@@ -1,0 +1,14 @@
+﻿@model HospitalProject_Team4.Models.Feedback
+@{
+    ViewBag.Title = "DeleteFeedback";
+}
+
+<h2>Are you sure you want to delete this feedback?</h2>
+
+<div class="navbar" style="margin-top:3%;">
+    <a href="/Feedback/ShowFeedback/@Model.feedback_id" class="btn btn-default">Cancel</a>
+
+    <form method="POST" action="/Feedback/Delete/@Model.feedback_id" style="display:inline-block; float:left; margin-right:5%; margin-left:10%;">
+        <input type="submit" value="Confirm" class="btn btn-danger"/>
+    </form>
+</div>

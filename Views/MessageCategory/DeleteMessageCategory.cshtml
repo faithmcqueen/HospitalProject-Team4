@@ -1,0 +1,14 @@
+﻿@model HospitalProject_Team4.Models.MessageCategory
+@{
+    ViewBag.Title = "DeleteMessageCategory";
+}
+
+<h2>Are you sure you want to delete this category?</h2>
+
+<div class="navbar" style="margin-top:3%;">
+    <a href="/MessageCategory/ShowMessageCategory/@Model.category_id" class="btn btn-default">Cancel</a>
+
+    <form method="POST" action="/MessageCategory/Delete/@Model.category_id" style="display:inline-block; float:left; margin-right:5%; margin-left:10%;">
+        <div><input type="submit" value="Confirm" class="btn btn-danger"/></div>
+    </form>
+</div>

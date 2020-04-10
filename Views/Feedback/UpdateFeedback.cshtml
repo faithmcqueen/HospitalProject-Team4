@@ -1,0 +1,37 @@
+﻿@model HospitalProject_Team4.Models.Feedback
+@{
+    ViewBag.Title = "UpdateFeedback";
+}
+
+<h2>Update Feedback</h2>
+
+<div class="navbar">
+    <a href="/Feedback/ListOfFeedbacks" class="btn btn-default">Back to List</a>
+</div>
+
+<form method="POST" action="/Feedback/UpdateFeedback/@Model.feedback_id" class="form-horizontal">
+
+    <div class="form-group">
+        <label for="first_name" class="col-sm-3">First Name:</label>
+        <input value="@Model.first_name" id="first_name" type="text" name="first_name" class="col-sm-11"/>
+    </div>
+    <div class="form-group">
+        <label for="last_name" class="col-sm-3">Last Name:</label>
+        <input value="@Model.last_name" id="last_name" type="text" name="last_name" class="col-sm-11"/>
+    </div>
+    <div class="form-group">
+        <label for="feedback_subject" class="col-sm-3">Feedback Subject:</label>
+        <input value="@Model.feedback_subject" id="feedback_subject" type="text" name="feedback_subject" class="col-sm-11"/>
+    </div>
+    <div class="form-group">
+        <label for="feedback_message" class="col-sm-3">Feedback Message:</label>
+        <textarea id="feedback_message" name="feedback_message" rows="3" class="col-sm-11">@Model.feedback_message</textarea>
+
+    </div>
+
+    <div>
+        <input type="submit" value="Update Feedback" class="btn btn-primary">
+    </div>
+</form>
+
+

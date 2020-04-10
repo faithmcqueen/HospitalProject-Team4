@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "AddFeedback";
+}
+
+<h2>Please give us your Feedback</h2>
+
+<form method="post" action="/Feedback/AddFeedback" class="form-horizontal">
+    <div class="form-group">
+        <label for="first_name" class="col-sm-2">First Name: </label>
+        <input id="first_name" type="text" name="first_name" class="col-sm-11"/>
+    </div>
+    <div class="form-group">
+        <label for="last_name" class="col-sm-2">Last Name: </label>
+        <input id="last_name" type="text" name="last_name" class="col-sm-11"/>
+    </div>
+    <div class="form-group">
+        <label for="feedback_subject" class="col-sm-2">Subject: </label>
+        <input id="feedback_subject" type="text" name="feedback_subject" class="col-sm-11"/>
+    </div>
+    <div class="form-group">
+        <label id="feedback_message" class="col-sm-2">Comment:</label>
+        <textarea id="feedback_message" name="feedback_message" rows="3" class="col-sm-11"></textarea>
+    </div>
+    <div>
+        <input type="submit" value="Submit" class="btn btn-primary"/>
+    </div>
+</form>
+

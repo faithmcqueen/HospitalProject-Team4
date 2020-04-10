@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "ListMessageCategory";
+}
+
+<h2>List of Message Categories</h2>
+
+<div class="navbar">
+    <a href="/MessageCategory/AddMessageCategory" class="btn btn-default" style="display:inline-block;float:right;">Add New Category</a>
+    <form method="GET" action="/MessageCategory/ListMessageCategory">
+        <input type="text" id="categorySearchKey" name="categorySearchKey" class="btn btn-default search-input" />
+        <input type="submit" value="Search" class="btn btn-default" />
+    </form>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Question's Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var categories in Model)
+        {
+            <tr>
+                <td>@categories.category_name</td>
+                <td>
+                    <a href="/MessageCategory/ShowMessageCategory/@categories.category_id" class="btn btn-primary">View</a>
+                    <a href="/MessageCategory/UpdateMessageCategory/@categories.category_id" class="btn btn-primary">Update</a>
+                    <a href="/MessageCategory/DeleteMessageCategory/@categories.category_id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

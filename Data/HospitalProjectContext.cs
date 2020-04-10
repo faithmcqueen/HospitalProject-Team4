@@ -42,9 +42,12 @@ namespace HospitalProject_Team4.Data
         {
             return new HospitalProjectContext();
         }
-       
+
         public System.Data.Entity.DbSet<HospitalProject_Team4.Models.Donation> Donation { get; set; }
-        
+
         public System.Data.Entity.DbSet<HospitalProject_Team4.Models.VolunteerRecruitment> volunteerRecruitment { get; set; }
+        public System.Data.Entity.DbSet<HospitalProject_Team4.Models.Feedback> Feedbacks { get; set; }
+        public System.Data.Entity.DbSet<HospitalProject_Team4.Models.MessageCategory> MessageCategories { get; set; }
+        public System.Data.Entity.DbSet<HospitalProject_Team4.Models.ContactUs> ContactUs { get; set; }
     }
 }

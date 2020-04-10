@@ -1,0 +1,22 @@
+﻿@model HospitalProject_Team4.Models.ContactUs
+@{
+    ViewBag.Title = "ShowContactUs";
+}
+
+<h2>Show Contact-Us</h2>
+
+<div class="navbar">
+    <a href="/ContactUs/ListContactUs" class="btn btn-default">Back to List</a>
+    <a href="/ContactUs/UpdateContactUs/@Model.message_id" class="btn btn-default">Reply</a>
+    <a href="/ContactUs/DeleteContactUs/@Model.message_id" class="btn btn-danger">Delete</a>
+</div>
+<div>
+    <div>First Name : @Model.first_name</div><br />
+    <div>Last Name : @Model.last_name</div><br />
+    <div>Email : @Model.email</div><br />
+    <div>Cell-phone : @Model.cell_phone</div><br />
+    <div>Category of Query : @Model.MessageCategories.category_name</div><br />
+    <div>Question : @Model.question</div><br/>
+    <div>Date : @Model.date</div>
+</div>
+

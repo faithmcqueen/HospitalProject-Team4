@@ -1,0 +1,13 @@
+﻿@model HospitalProject_Team4.Models.ContactUs
+@{
+    ViewBag.Title = "DeleteContactUs";
+}
+
+<h2>Are you sure you want to delete this query?</h2>
+
+<div class="navbar" style="margin-top:3%;">
+    <a href="/ContactUs/ShowContactUs/@Model.message_id" class="btn btn-default">Cancel</a>
+    <form method="POST" action="/ContactUs/Delete/@Model.message_id" style="display:inline-block; float:left; margin-right:5%; margin-left:10%;">
+        <input type="submit" value="Confirm" class="btn btn-danger"/>
+    </form>
+</div>

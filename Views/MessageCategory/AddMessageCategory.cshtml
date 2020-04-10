@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "AddMessageCategory";
+}
+
+<h2>Add New Message Category</h2>
+
+<form method="post" action="/MessageCategory/AddMessageCategory" class="form-horizontal">
+
+    <div class="form-group">
+        <label for="category_name" class="col-sm-2">Category Name: </label>
+        <input id="category_name" type="text" name="category_name" class="col-sm-11" />
+    </div>
+    <div>
+        <input type="submit" value="ADD" class="btn btn-primary"/>
+    </div>
+</form>
+

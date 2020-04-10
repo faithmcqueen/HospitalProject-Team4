@@ -1,0 +1,41 @@
+﻿@model List<HospitalProject_Team4.Models.ContactUs>
+@{
+    ViewBag.Title = "ListContactUs";
+}
+
+<h2>Contact-Us List</h2>
+
+<div class="navbar">
+    <form action="/ContactUs/ListContactUs" method="GET">
+        <input type="text" name="contactSearchKey" id="contactSearchKey" class="btn btn-default search-input" />
+        <input type="submit" value="Search" class="btn btn-default" />
+    </form>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Question's Category</th>
+            <th>Question</th>
+            <th>Date</th>
+            <th>Reply</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contactUs in Model)
+        {
+        <tr>
+            <td>@contactUs.MessageCategories.category_name</td>
+            <td>@contactUs.question</td>
+            <td>@contactUs.date.ToString("yyyy-MM-dd")</td>
+            <td>@contactUs.reply</td>
+            <td>
+                <a href="/ContactUs/ShowContactUs/@contactUs.message_id" class="btn btn-primary">View</a>
+                <a href="/ContactUs/UpdateContactUs/@contactUs.message_id" class="btn btn-primary">Reply</a>
+                <a href="/ContactUs/DeleteContactUs/@contactUs.message_id" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

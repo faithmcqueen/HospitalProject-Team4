@@ -1,0 +1,21 @@
+﻿@model HospitalProject_Team4.Models.MessageCategory
+@{
+    ViewBag.Title = "UpdateMessageCategory";
+}
+    <h2>Update Question Category</h2>
+
+<div class="navbar">
+    <a href="/MessageCategory/ListMessageCategory" class="btn btn-default">Back to List</a>
+</div>
+<form method="POST" action="/MessageCategory/UpdateMessageCategory/@Model.category_id" class="form-horizontal">
+
+    <div class="form-group">
+        <label for="category_name" class="col-sm-3">Category Name:</label>
+        <input value="@Model.category_name" id="category_name" type="text" name="category_name" class="col-sm-11" />
+    </div>
+
+    <div>
+        <input type="submit" value="Update Category" class="btn btn-primary">
+    </div>
+</form>
+

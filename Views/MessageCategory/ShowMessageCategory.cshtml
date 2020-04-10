@@ -1,0 +1,16 @@
+﻿@model HospitalProject_Team4.Models.MessageCategory
+@{
+    ViewBag.Title = "ShowMessageCategory";
+}
+
+<h2>Show Message Category</h2>
+
+<div class="navbar">
+    <a href="/MessageCategory/ListMessageCategory" class="btn btn-default">Back to List</a>
+    <a href="/MessageCategory/UpdateMessageCategory/@Model.category_id" class="btn btn-default">Update</a>
+    <a href="/MessageCategory/DeleteMessageCategory/@Model.category_id" class="btn btn-danger">Delete</a>
+</div>
+<div>
+    <div>Category Name : @Model.category_name</div>
+</div>
+

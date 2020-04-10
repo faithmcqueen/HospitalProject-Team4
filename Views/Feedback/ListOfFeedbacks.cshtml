@@ -1,0 +1,41 @@
+﻿@model List<HospitalProject_Team4.Models.Feedback>
+@{
+    ViewBag.Title = "ListOfFeedbacks";
+}
+
+<h2>List Of Feedbacks</h2>
+
+<div class="navbar">
+    <a href="/Feedback/AddFeedback" class="btn btn-default" style="display:inline-block;float:right;">Add New Feedback</a>
+    <form method="GET" action="/Feedback/ListOfFeedbacks" >
+        <input type="text" id="feedbackSearchKey" name="feedbackSearchKey" class="btn btn-default search-input"/>
+        <input type="submit" value="Search" class="btn btn-default"/>
+    </form>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Comment</th>
+            <th>Feedback's Subject</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var feedback in Model)
+        {
+            <tr>
+                <td>@feedback.feedback_message</td>
+                <td>@feedback.feedback_subject</td>
+                <td>@feedback.feedback_date.ToString("yyyy-MM-dd")</td>
+                <td>
+                    <a href="/Feedback/ShowFeedback/@feedback.feedback_id" class="btn btn-primary">View</a>
+                    <a href="/Feedback/UpdateFeedback/@feedback.feedback_id" class="btn btn-primary">Update</a>
+                    <a href="/Feedback/DeleteFeedback/@feedback.feedback_id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+    

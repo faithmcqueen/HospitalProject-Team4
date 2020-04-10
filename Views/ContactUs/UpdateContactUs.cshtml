@@ -1,0 +1,22 @@
+﻿@model HospitalProject_Team4.Models.ContactUs
+@{
+    ViewBag.Title = "UpdateContactUs";
+}
+
+<h2>Update Contact Us</h2>
+
+<div class="navbar">
+    <a href="/ContactUs/ListContactUs" class="btn btn-default">Back to List</a>
+</div>
+
+<form method="POST" action="/ContactUs/UpdateContactUs/@Model.message_id" class="form-horizontal">
+
+    <div class="form-group">
+        <label for="reply" class="col-sm-3">Reply:</label>
+        <input value="@Model.reply" id="reply" type="text" name="reply" class="col-sm-11" />
+    </div>
+
+    <div>
+        <input type="submit" value="Reply" class="btn btn-primary">
+    </div>
+</form>
