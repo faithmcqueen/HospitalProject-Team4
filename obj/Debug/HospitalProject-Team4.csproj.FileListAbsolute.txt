@@ -233,3 +233,4 @@ D:\HUMBER\sem2\mobile-development-christine\hospital_project\HospitalProject-Tea
 D:\HUMBER\sem2\mobile-development-christine\hospital_project\HospitalProject-Team4\bin\Ubiety.Logging.Core.xml
 D:\HUMBER\sem2\mobile-development-christine\hospital_project\HospitalProject-Team4\obj\Debug\HospitalProject_Team4.Migrations.initial.resources
 D:\HUMBER\sem2\mobile-development-christine\hospital_project\HospitalProject-Team4\obj\Debug\HospitalProject-Team4.csproj.GenerateResource.cache
+D:\HUMBER\sem2\mobile-development-christine\hospital_project\HospitalProject-Team4\obj\Debug\HospitalProject-Team4.csprojAssemblyReference.cache

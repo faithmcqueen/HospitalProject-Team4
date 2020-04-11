@@ -126,14 +126,9 @@ namespace HospitalProject_Team4.Controllers
         }
         /*
         [HttpPost]
-        public ActionResult Update(string id, string phoneNumber, string volunteerspecialization)
+        public ActionResult Update(string id, string donat, string volunteerspecialization)
         {
             
-            
-                   //file extensioncheck taken from https://www.c-sharpcorner.com/article/file-upload-extension-validation-in-asp-net-mvc-and-javascript/
-
-            //Debug.WriteLine("I am trying to edit a pet's name to "+PetName+" and change the weight to "+PetWeight.ToString());
-
             string query = "update Donations set volunteer_specialization=@volunteer_specialization, HasFile=@hasFile, volunteer_FileExtension=@volunteer_FileExtension where volunteer_id=@v_id";
             SqlParameter[] sqlparams = new SqlParameter[4];
             sqlparams[0] = new SqlParameter("@volunteer_FileExtension", volunteerFileExtension);

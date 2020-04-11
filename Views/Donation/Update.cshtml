@@ -1,5 +1,4 @@
-﻿
-@model HospitalProject_Team4.Models.VolunteerRecruitment
+﻿@model HospitalProject_Team4.Models.Donation
 @{
     ViewBag.Title = "Update";
 }
@@ -12,12 +11,11 @@
 </head>
 <body>
 
-    <h2>Update</h2>
+    <h2>Update of Donation</h2>
     <div class="navbar">
-        <a href="/VolunteerRecruitment/List">Back to List</a>
+        <a href="/Donation/List">Back to List</a>
     </div>
-    <!-- Do not forget enctype="multiplart/form-data" if you want to do file upload! -->
-    <form action="/VolunteerRecruitment/Update/@Model.volunteer_id" method="POST" enctype="multipart/form-data">
+    <form action="/VolunteerRecruitment/Update/@Model.DonationID" method="POST">
 
         <div class="inpfield">
             <span>User Name: </span>
@@ -31,13 +29,13 @@
 
 
         <div class="inpfield">
-            <span>File Upload: </span>
-            <input type="file" name="VolunteerCV" id="VolunteerCV" />
+            <span>Donated Amount: </span>
+            <input type="text" name="donated_on" id="donated_on" />
         </div>
 
         <div class="inpfield">
-            <span>Volunteer Specialization</span>
-            <textarea id="volunteerspecialization" name="volunteerspecialization">@Model.volunteer_specialization</textarea>
+            <span>Donated on : </span>
+            <input value="@Model.donated_on" id="donated_on" name="donated_on"/>
         </div>
 
         <div class="inpfield"><input type="submit" value="Update Volunteer" /></div>
