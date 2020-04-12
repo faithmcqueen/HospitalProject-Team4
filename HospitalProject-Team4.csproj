@@ -191,6 +191,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\FAQController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -199,13 +200,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004090154168_initials.cs" />
-    <Compile Include="Migrations\202004090154168_initials.Designer.cs">
-      <DependentUpon>202004090154168_initials.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004090412010_FAQ.cs" />
-    <Compile Include="Migrations\202004090412010_FAQ.Designer.cs">
-      <DependentUpon>202004090412010_FAQ.cs</DependentUpon>
+    <Compile Include="Migrations\202004102146332_initial.cs" />
+    <Compile Include="Migrations\202004102146332_initial.Designer.cs">
+      <DependentUpon>202004102146332_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -274,10 +271,21 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\VolunteerRecruitment\Add.cshtml" />
+    <Content Include="Views\VolunteerRecruitment\Update.cshtml" />
+    <Content Include="Views\VolunteerRecruitment\List.cshtml" />
+    <Content Include="Views\VolunteerRecruitment\Show.cshtml" />
+    <Content Include="Views\VolunteerRecruitment\DeleteConfirm.cshtml" />
+    <Content Include="Views\Donation\Add.cshtml" />
+    <Content Include="Views\Donation\DeleteConfirm.cshtml" />
+    <Content Include="Views\Donation\List.cshtml" />
+    <Content Include="Views\Donation\Show.cshtml" />
+    <Content Include="Views\Donation\Update.cshtml" />
     <Content Include="Views\FAQ\ViewFAQ.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\VolunteerFiles\" />
+    <Folder Include="Models\ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -293,11 +301,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004090154168_initials.resx">
-      <DependentUpon>202004090154168_initials.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004090412010_FAQ.resx">
-      <DependentUpon>202004090412010_FAQ.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004102146332_initial.resx">
+      <DependentUpon>202004102146332_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
