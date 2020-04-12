@@ -1,7 +1,13 @@
-﻿
-@{
-    ViewBag.Title = "ViewFAQ";
+﻿@model HospitalProject_Team4.Models.FAQ
+    @{
+    ViewBag.Title = "ViewFaq";
 }
+<!--this View page is designed for non-admin user who only can view FAQs but not edit or delete-->
+<h2>ViewFaq</h2>
+<div class="col2">
+    <div><span>Question:</span>@Model.question</div>
+    <div><span>Answer:</span>@Model.answer</div>
 
-<h2>ViewFAQ</h2>
+</div>
+
 

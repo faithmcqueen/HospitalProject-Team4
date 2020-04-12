@@ -231,5 +231,10 @@ namespace HospitalProject_Team4.Controllers
                 _userManager = value;
             }
         }
+       // [HttpPost]
+        //public async Task<ActionResult> Add(string Username, string Useremail, string Userpass, string GroomerFName, string GroomerLName, string GroomerDOB, decimal GroomerRate)
+        //{
+        //    return View();
+        //}
     }
 }

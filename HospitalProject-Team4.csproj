@@ -119,11 +119,8 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Ubiety.Dns.Core, Version=4.1.2.0, Culture=neutral, PublicKeyToken=62d65a2efdde5827, processorArchitecture=MSIL">
-      <HintPath>packages\Ubiety.Dns.Core.4.1.2\lib\net452\Ubiety.Dns.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Ubiety.Logging.Core, Version=1.2.2.0, Culture=neutral, PublicKeyToken=133e143470e66433, processorArchitecture=MSIL">
-      <HintPath>packages\Ubiety.Logging.Core.1.2.2\lib\net452\Ubiety.Logging.Core.dll</HintPath>
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.19\lib\net452\Ubiety.Dns.Core.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -200,9 +197,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004102146332_initial.cs" />
-    <Compile Include="Migrations\202004102146332_initial.Designer.cs">
-      <DependentUpon>202004102146332_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202004121710035_conflicsolved.cs" />
+    <Compile Include="Migrations\202004121710035_conflicsolved.Designer.cs">
+      <DependentUpon>202004121710035_conflicsolved.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -281,11 +278,16 @@
     <Content Include="Views\Donation\Show.cshtml" />
     <Content Include="Views\Donation\Update.cshtml" />
     <Content Include="Views\FAQ\ViewFAQ.cshtml" />
+    <Content Include="Views\FAQ\List.cshtml" />
+    <Content Include="Views\FAQ\Add.cshtml" />
+    <Content Include="Views\FAQ\Update.cshtml" />
+    <Content Include="Views\FAQ\Delete.cshtml" />
+    <Content Include="Views\FAQ\ViewFaq.cshtml" />
+    <Content Include="Views\FAQ\AdminViewFaq.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\VolunteerFiles\" />
-    <Folder Include="Models\ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -301,8 +303,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004102146332_initial.resx">
-      <DependentUpon>202004102146332_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004121710035_conflicsolved.resx">
+      <DependentUpon>202004121710035_conflicsolved.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
