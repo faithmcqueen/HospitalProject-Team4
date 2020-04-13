@@ -1,0 +1,20 @@
+﻿@model HospitalProject_Team4.Models.ViewModels.ListPostings
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>@Model.JobPosting.JobTitle</h2>
+<div><a class="btn btn-secondary" href="/Jobs/Update/@Model.JobPosting.PostingID">Update</a> <a class="btn btn-danger" href="/Jobs/Delete/@Model.JobPosting.PostingID">Delete</a></div>
+@{
+    //We need an if statement to call the correct department name from the Department table, through the DepartmentID in the JobPosting table
+    var department = "";
+    if (Model.Department.DepartmentID == Model.JobPosting.DepartmentID)
+    {
+        department = Model.Department.Name;
+    }
+}
+<span>@department</span>
+<span>Due by: @Model.JobPosting.ApplicationDeadline</span>
+<span>Description:</span>
+<span class="jobdesc">@Model.JobPosting.JobDescription</span>
+

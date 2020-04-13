@@ -1,0 +1,36 @@
+﻿@model HospitalProject_Team4.Models.JobPosting
+@{
+    ViewBag.Title = "Apply";
+}
+
+<h2>Apply for @Model.JobTitle</h2>
+<div class="navbar">
+    <a class="btn btn-secondary" href="/Jobs/List">Back to All Jobs</a>
+</div>
+<form method="POST" action="/Jobs/Apply/@Model.PostingID" enctype="multipart/form-data">
+    >
+    <div class="inpfield"><span>Name:</span><input id="Name" type="text" name="Name" placeholder="John Smith" /></div>
+    <div class="inpfield"><span>Email:</span><input id="Email" type="text" name="Email" placeholder="example@example.com" /></div>
+    <div class="inpfield"><span>Phone:</span><input id="Phone" type="text" name="Phone" placeholder="555-0123-4567" /></div>
+    <div class="inpfield"><span>Former Employer:</span><input id="FormerEmployer" type="text" name="FormerEmployer" placeholder="Company Name" /></div>
+    <div class="inpfield">
+        <span>Reference 1:</span>
+        <div class="inpfield"><span>Name:</span><input id="Ref1Name" type="text" name="Ref1Name" placeholder="John Smith" /></div>
+        <div class="inpfield"><span>Email:</span><input id="Ref1Email" type="text" name="Ref1Email" placeholder="example@example.com" /></div>
+    </div>
+    <div class="inpfield">
+        <span>Reference 2:</span>
+        <div class="inpfield"><span>Name:</span><input id="Ref2Name" type="text" name="Ref2Name" placeholder="John Smith" /></div>
+        <div class="inpfield"><span>Email:</span><input id="Ref2Email" type="text" name="Ref2Email" placeholder="example@example.com" /></div>
+    </div>
+    <div class="inpfield">
+        <span>Reference 3:</span>
+        <div class="inpfield"><span>Name:</span><input id="Ref3Name" type="text" name="Ref3Name" placeholder="John Smith" /></div>
+        <div class="inpfield"><span>Email:</span><input id="Ref3Email" type="text" name="Ref3Email" placeholder="example@example.com" /></div>
+    </div>
+    <div class="inpfield"><span>Resume:</span><input type="file" name="Resume" id="Resume" /></div>
+    <div class="inpfield">
+        <input class="btn btn-success" type="submit" value="Apply For Job">
+    </div>
+</form>
+

@@ -1,0 +1,33 @@
+﻿@model HospitalProject_Team4.Models.ViewModels.ListPostings
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Career Opportunities With Riverside Health Care</h2>
+<form action="/Jobs/List" method="GET">
+    <input type="text" name="jobsearchkey" id="jobsearchkey" />
+    <input type="submit" value="Search" />
+</form>
+@foreach (var department in Model.Departments)
+{
+    <h3>@department.Name</h3>
+
+    var jobtitle = "";
+    var jobdesc = "";
+
+    if (Model.JobPosting.DepartmentID == department.DepartmentID)
+    {
+        jobtitle = Model.JobPosting.JobTitle;
+        jobdesc = Model.JobPosting.JobDescription;
+    }
+    <div class="itemdetails">
+        <div class="">Job Title: <span>@jobtitle</span></div>
+        <div class="">Job Description: <span>@jobdesc</span></div>
+        <a class="btn btn-success" href="/Jobs/Show/@Model.JobPosting.PostingID">Learn More</a>
+
+    </div>
+    <div style="clear:both;"></div>
+
+}
+

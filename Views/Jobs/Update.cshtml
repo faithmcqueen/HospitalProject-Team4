@@ -1,0 +1,43 @@
+﻿@model HospitalProject_Team4.Models.ViewModels.UpdatePosting
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update @Model.JobPostings.JobTitle</h2>
+<div class="navbar">
+    <a class="btn btn-secondary" href="/Jobs/Admin/List">Back to All Jobs</a>
+</div>
+<form method="POST" action="/Jobs/Admin/Update/@Model.JobPostings.PostingID">
+    <div class="inpfield"><span>Job Title:</span><input id="JobTitle" type="text" name="JobTitle" value="@Model.JobPostings.JobTitle" /></div>
+    <div class="inpfield">
+        <span>Department:</span>
+        <select id="DepartmentID" type="text" name="DepartmentID">
+            @{
+                //Create a drop down for departments with a rendering loop
+                // rendering loop pulls everything from the Departments table
+                foreach (var department in Model.Departments)
+                {
+                    //create an if statement to hold our selected option
+                    var selected = "";
+                    if (Model.JobPostings.DepartmentID == department.DepartmentID)
+                    {
+                        selected = "selected";
+                    }
+                    //Loop through our options in the dropdown with selected var
+                    <option value="@department.DepartmentID" @selected>@department.Name</option>
+
+                }
+            }
+        </select>
+    </div>
+    <div class="inpfield"><span>Application Deadline:</span><input id="AppDeadline" type="text" name="AppDeadline" placeholder="YYYY/MM/DD" value="@Model.JobPostings.ApplicationDeadline" /></div>
+    <div class="inpfield"><span>Send Application To:</span><input id="AppAccept" type="text" name="AppAccept" value="@Model.JobPostings.Accepter" /></div>
+    <div class="inpfield">
+        Job Description:
+        <textarea id="JobDesc" name="JobDesc">@Model.JobPostings.JobDescription</textarea>
+    </div>
+    <div class="inpfield">
+        <input class="btn btn-success" type="submit" value="Update Job Posting">
+    </div>
+</form>
+

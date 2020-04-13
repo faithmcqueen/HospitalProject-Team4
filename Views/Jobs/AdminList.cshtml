@@ -1,0 +1,57 @@
+﻿@model HospitalProject_Team4.Models.ViewModels.ListPostings
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>All Job Postings</h2>
+<div class="navbar">
+    <a class="btn btn-secondary" href="/Jobs/Admin/New">Add New Job</a>
+</div>
+<form action="/Jobs/Admin/List" method="GET">
+    <input type="text" name="jobsearchkey" id="jobsearchkey" />
+    <input type="submit" value="Search" />
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Job Title</th>
+            <th scope="col">Job Description</th>
+            <th scope="col">Department</th>
+            <th scope="col">Send To</th>
+            <th scope="col">Application Due Date</th>
+            <th scope="col">Edits</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var jobpost in Model.JobPostings)
+        {
+            if (Model.Department.DepartmentID == jobpost.DepartmentID)
+            {
+                var department = Model.Department.Name;
+                <tr>
+                    <th scope="row">@jobpost.PostingID</th>
+                    <td><a <a href="/Jobs/Admin/Show/@jobpost.PostingID">@jobpost.JobTitle</a></td>
+                    <td>@jobpost.JobDescription</td>
+                    <td>@department</td>
+                    <td>@jobpost.Accepter</td>
+                    <td>@jobpost.ApplicationDeadline</td>
+                    <td><a class="btn btn-secondary" href="/Jobs/Admin/Update/@jobpost.PostingID">Update</a> <a class="btn btn-danger" href="/Jobs/Admin/Delete/@jobpost.PostingID">Delete</a></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+@*<div class="paginate">
+        @{
+            <a href="/Parking/List?pagenum=@((int)ViewData["pagenum"] - 1)&parksearchkey=@ViewData["parksearchkey"]">Prev</a>
+            @ViewData["pagesummary"]
+            <a href="/Parking/List?pagenum=@((int)ViewData["pagenum"] + 1)&parksearchkey=@ViewData["parksearchkey"]">Next</a>
+        }
+    </div>*@
+
+
+
+
+
+

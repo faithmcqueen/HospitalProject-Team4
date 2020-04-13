@@ -407,6 +407,14 @@
     <Content Include="Views\FAQ\Delete.cshtml" />
     <Content Include="Views\FAQ\ViewFaq.cshtml" />
     <Content Include="Views\FAQ\AdminViewFaq.cshtml" />
+    <Content Include="Views\Jobs\List.cshtml" />
+    <Content Include="Views\Jobs\Show.cshtml" />
+    <Content Include="Views\Jobs\Apply.cshtml" />
+    <Content Include="Views\Jobs\Update.cshtml" />
+    <Content Include="Views\Jobs\Delete.cshtml" />
+    <Content Include="Views\Jobs\New.cshtml" />
+    <Content Include="Views\Jobs\AdminList.cshtml" />
+    <Content Include="Views\Jobs\AdminShow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
