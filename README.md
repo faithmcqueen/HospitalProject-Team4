@@ -50,3 +50,33 @@
   | Views/Feedback/UpdateFeedback.cshtml | This file will allow the admin to edit the comment and upload it on the website. | Navjot Gill |
   | Views/Feedback/DeleteFeedback.cshtml | This file will allow the admin to delete the feedback permanently from the database. | Navjot Gill |
   | Views/Feedback/ShowFeedback.cshtml | This file will allow the admin to view the feedback details in non-editable format and it will also have links to delete and update the feedback . | Navjot Gill |
+  
+  
+   - Feature Two : Contact Us 
+  1. Creating New Question using this feature 
+  2. View Contact Us
+  3. Replying to Contact Us
+  4. Deleting Contact Us
+  5. Creating new category under which user can ask their questions
+  6. View Category
+  7. Updating Category
+  8. Deleting Category
+  
+  | File | Description | Author |
+  | ------- | ----------- | ----- |
+  | Data/HospitalProjectContext.cs | This file is used to create connection with the database and adding models. | Navjot Gill |
+  | Models/ContactUs.cs | In this file columns of database are defined for ContactUs class . | Navjot Gill |
+  | Models/MessageCategory.cs | In this file columns of database are defined for MessageCategory class . | Navjot Gill |
+  | Controllers/ContactUsController.cs | This file holds all the methods that are required to perform CRUD operations. | Navjot Gill | 
+  | Controllers/MessageCategoryController.cs | This file holds all the methods that are required to perform CRUD operations. | Navjot Gill | 
+  | Web.Config | This file is modified for the database configuration. | Navjot Gill |
+  | Views/ContactUs/AddContactUs.cshtml | This file is used to create user interface for user and using that they can ask their question. | Navjot Gill | 
+  | Views/ContactUs/ListContactUs.cshtml | This file will display a list of all questions asked by the users to the admin in a table format and each item will have links to view, delete and update. | Navjot Gill |
+  | Views/ContactUs/UpdateContactUs.cshtml | This file will allow the admin to reply the question and send it. | Navjot Gill |
+  | Views/ContactUs/DeleteContactUs.cshtml | This file will allow the admin to delete the question permanently from the database. | Navjot Gill |
+  | Views/ContactUs/ShowContactUs.cshtml | This file will allow the admin to view the details of selected ContactUs in non-editable format and it will also have links to delete and reply the question . | Navjot Gill |
+ | Views/MessageCategory/AddMessageCategory.cshtml | This file is used to create user interface for admin to add new categories under which user can ask questions. | Navjot Gill | 
+  | Views/MessageCategory/ListMessageCategory.cshtml | This file will display a list of all categories to the admin in a table format and each item will have links to view, delete and update. | Navjot Gill |
+  | Views/MessageCategory/UpdateMessageCategory.cshtml | This file will allow the admin to update the title of category. | Navjot Gill |
+  | Views/MessageCategory/DeleteMessageCategory.cshtml | This file will allow the admin to delete the category from the database. | Navjot Gill |
+  | Views/MessageCategory/ShowMessageCategory.cshtml | This file will allow the admin to view the details of selected category in non-editable format and it will also have links to delete and update the category . | Navjot Gill |
