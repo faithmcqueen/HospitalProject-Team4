@@ -34,6 +34,7 @@ namespace HospitalProject_Team4.Controllers
         [HttpPost]
         public async Task<ActionResult> Add(string Username, string phoneNumber, string volunteerSpecialization, string Useremail, string Userpass)
         {
+
             Debug.WriteLine("Inside Post method add");
             //christine pet groomer for reference
             ApplicationUser NewUser = new ApplicationUser();
@@ -60,6 +61,8 @@ namespace HospitalProject_Team4.Controllers
                 db.volunteerRecruitment.Add(NewVol);
 
                 db.SaveChanges();
+                return RedirectToAction("List");
+
             }
             else
             {
@@ -123,7 +126,7 @@ namespace HospitalProject_Team4.Controllers
             //Christine pet groomer for reference
             //assume that file is empty keeping the int value 0
             int hasFileTemp = 0;
-            string volunteerFileExtension = "";
+            string volunteerFileExtension = " ";
             //checking to see if some data is there
             if (VolunteerCV != null)
             {
@@ -155,7 +158,7 @@ namespace HospitalProject_Team4.Controllers
                         }
                         catch (Exception ex)
                         {
-                            Debug.WriteLine("CV file was not saved successfully.");
+                            Debug.WriteLine("CV file was not saved.");
                             Debug.WriteLine("Exception:" + ex);
                         }
 
@@ -163,13 +166,20 @@ namespace HospitalProject_Team4.Controllers
                 }
             }
 
-            string query = "update VolunteerRecruitments set volunteer_specialization=@volunteer_specialization, HasFile=@hasFile, volunteer_FileExtension=@volunteer_FileExtension where volunteer_id=@v_id";
+            string query = "update VolunteerRecruitments set volunteer_specialization=@volunteer_specialization, " +
+                "HasFile=@hasFile, volunteer_FileExtension=@volunteer_FileExtension where volunteer_id=@v_id";
             SqlParameter[] sqlparams = new SqlParameter[4];
             sqlparams[0] = new SqlParameter("@volunteer_FileExtension", volunteerFileExtension);
             sqlparams[1] = new SqlParameter("@hasFile", hasFileTemp);
             sqlparams[2] = new SqlParameter("@volunteer_specialization", volunteerspecialization);
             sqlparams[3] =  new SqlParameter("@v_id", id);
 
+            Debug.WriteLine("has File " + hasFileTemp);
+            Debug.WriteLine("VOlunteer specialization  " + volunteerspecialization);
+            Debug.WriteLine("volunteerFileExtension  " + volunteerFileExtension);
+            Debug.WriteLine("id :  " + id);
+
+            Debug.WriteLine("VOlunteer query " + query);
             string query_aspnet = "update AspNetUsers set phoneNumber=@phoneNumber where Id=@aspnet_id";
             SqlParameter[] sqlparams_aspusers = new SqlParameter[2];
             sqlparams[0] = new SqlParameter("@phoneNumber", phoneNumber);
@@ -179,11 +189,10 @@ namespace HospitalProject_Team4.Controllers
             Debug.WriteLine("paramm " + sqlparams);
             Debug.WriteLine("VOlunteerr Specialization ---- " + volunteerspecialization);
 
-            db.Database.ExecuteSqlCommand(query, sqlparams); 
+            //db.Database.ExecuteSqlCommand(query, sqlparams); 
 
             db.Database.ExecuteSqlCommand(query_aspnet, sqlparams_aspusers);
 
-            //logic for updating the pet in the database goes here
             return RedirectToAction("List");
         }
         public ActionResult DeleteConfirm(string id)

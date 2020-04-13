@@ -55,8 +55,7 @@ namespace HospitalProject_Team4.Controllers
                 db.SaveChanges();
                 return RedirectToAction("List");
                 /*
-
-                Donation newbooking = new Donation();
+                                Donation newbooking = new Donation();
                 newbooking.DonationID = Id;
                 newbooking.donated_on = DateTime.Now;
                 newbooking.donation_amount = ;
@@ -67,7 +66,7 @@ namespace HospitalProject_Team4.Controllers
             }
             else
             {
-                //Simple way of displaying errors
+                //Errors display
                 ViewBag.ErrorMessage = "Something Went Wrong!";
                 ViewBag.Errors = new List<string>();
                 foreach (var error in result.Errors)
@@ -119,33 +118,26 @@ namespace HospitalProject_Team4.Controllers
             string query = "select * from Donations inner join AspNetUsers on Donations.DonationID= AspNetUsers.id where AspNetUsers.id = @id";
             var parameter = new SqlParameter("@id", id);
             Donation donation= db.Donation.SqlQuery(query, parameter).FirstOrDefault();
-            //VolunteerRecruitment volunteer = db.volunteerRecruitment.Find(id);
-
+          
             return View(donation);
 
         }
-        /*
+        
         [HttpPost]
-        public ActionResult Update(string id, string donat, string volunteerspecialization)
+        public ActionResult Update(string id, string donor_mail)
         {
             
-            string query = "update Donations set volunteer_specialization=@volunteer_specialization, HasFile=@hasFile, volunteer_FileExtension=@volunteer_FileExtension where volunteer_id=@v_id";
+            string query = "update Donations set donor_mail=@donor_mail where DonationId=@id";
             SqlParameter[] sqlparams = new SqlParameter[4];
-            sqlparams[0] = new SqlParameter("@volunteer_FileExtension", volunteerFileExtension);
-            sqlparams[1] = new SqlParameter("@hasFile", hasFileTemp);
-            sqlparams[2] = new SqlParameter("@volunteer_specialization", volunteerspecialization);
-            sqlparams[3] = new SqlParameter("@v_id", id);
-
-            string query_aspnet = "update AspNetUsers set phoneNumber=@phoneNumber where Id=@aspnet_id";
-            SqlParameter[] sqlparams_aspusers = new SqlParameter[2];
-            sqlparams[0] = new SqlParameter("@phoneNumber", phoneNumber);
-            sqlparams[1] = new SqlParameter("@aspnet_id", id);
+            sqlparams[0] = new SqlParameter("@donor_mail", donor_mail);
+            sqlparams[1] = new SqlParameter("@id", id);
+            
 
             db.Database.ExecuteSqlCommand(query, sqlparams);
 
             //logic for updating the pet in the database goes here
             return RedirectToAction("List");
-        }*/
+        }
         public ActionResult DeleteConfirm(string id)
         {
             string query = "select * from Donations inner join AspNetUsers on Donations.DonationId = AspNetUsers.id where AspNetUsers.id = @id";

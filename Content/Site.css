@@ -22,9 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
-
-
-/* styling for the pet grooming project*/
+.width-center {
+    width: 70%;
+    margin: 0 auto;
+}
 .listitem {
     background: #f3f3f3;
     padding: 10px;
