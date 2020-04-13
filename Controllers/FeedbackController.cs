@@ -13,6 +13,9 @@ using HospitalProject_Team4.Data;
 
 namespace HospitalProject_Team4.Controllers
 {
+    //I am not using Application user her for now 
+    //I am just performing CRUD opertions fot this feature
+
     public class FeedbackController : Controller
     {
         //create object of database
@@ -24,7 +27,8 @@ namespace HospitalProject_Team4.Controllers
             return View();
         }
 
-        // GET: Feedbacks
+        // GET LIST: Feedbacks
+        /* -------------This method is created for logged in admin. Admin can see the list of feedbacks posted by the users in table format -----------*/
         public ActionResult ListOfFeedbacks(string feedbackSearchKey)
         {
             //debug line to test whether we get the input from search key
@@ -35,7 +39,7 @@ namespace HospitalProject_Team4.Controllers
 
             if (feedbackSearchKey != "" && feedbackSearchKey != null)
             {
-                //SQL equivalent
+                //LINQ is used to display the list of contact us
 
                 feedbacks =
                     db.Feedbacks
@@ -56,6 +60,8 @@ namespace HospitalProject_Team4.Controllers
         //ADD: Feedback (this method is used to push data from database in the fields)
         //But here we do not need any data from database to add a new Feedback
         //That's why there is nothing in the Add() method
+        /* ----------------This method is created for user whether loggin or not. ----------------*/
+        /* ---------------Using this method they can post their feedback --------------*/
         public ActionResult AddFeedback()
         {
             return View();
@@ -88,6 +94,8 @@ namespace HospitalProject_Team4.Controllers
         }
 
         // GET: Details of individual Feedback
+        /* ------------This method is created for logged in admin-----------------*/
+        /* ------------Admin can view the details of a selescted feedback using this method -------------*/
         public ActionResult ShowFeedback(int? id)
         {
             //if id is equal to NULL then, return BadRequest
@@ -118,6 +126,8 @@ namespace HospitalProject_Team4.Controllers
 
         //Update Feedback in database
         //This block of code execute when we click on submit button to update a feedback on the URL: /Feedback/UpdateFeedback
+        /* ----------This method is creted for logged in admin --------------*/
+        /* -----------Admin can update the feedback by using this method ----------*/
         [HttpPost]
         public ActionResult UpdateFeedback(int id, string first_name, string last_name, string feedback_subject, string feedback_message, string feedback_date)
         {
@@ -146,6 +156,8 @@ namespace HospitalProject_Team4.Controllers
 
         //Delete Feedback
         //GET Data of selected Feedback
+        /* ---------This method is created for logged in admin---------*/
+        /*-----------Admin can delete the selected feedback using this method -------------*/
         public ActionResult DeleteFeedback(int id)
         {
             //query to get the selected Feedback
@@ -173,3 +185,4 @@ namespace HospitalProject_Team4.Controllers
 
     }
 }
+//Refernce taken from Christine's code

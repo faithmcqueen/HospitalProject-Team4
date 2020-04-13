@@ -15,6 +15,10 @@ namespace HospitalProject_Team4.Controllers
 {
     public class MessageCategoryController : Controller
     {
+
+        //I am not using Application user her for now 
+        //I am just performing CRUD opertions fot this feature
+
         //create object of database
         private HospitalProjectContext db = new HospitalProjectContext();
 
@@ -24,16 +28,15 @@ namespace HospitalProject_Team4.Controllers
             return View();
         }
 
+        // GET List: Message Categories
+        /* -------------This method is created for logged in admin. Admin can see the list of categories under which user can send the questions using contactus feature in table format -----------*/
         public ActionResult ListMessageCategory(string categorysearchkey)
         {
             Debug.WriteLine("The search key is " + categorysearchkey);
 
             if (categorysearchkey != null && categorysearchkey != "")
             {
-                //SQL : 
-                // select * from groomers 
-                // where groomerfname like '%@key%' OR
-                // groomerlname like '%key%'
+
                 List<MessageCategory> messageCategories = db.MessageCategories
                     .Where(category =>
                         category.category_name.Contains(categorysearchkey))
@@ -47,16 +50,16 @@ namespace HospitalProject_Team4.Controllers
             }
         }
 
-        //ADD: Feedback (this method is used to push data from database in the fields)
-        //But here we do not need any data from database to add a new Feedback
-        //That's why there is nothing in the Add() method
+        //ADD: Message Category (this method is used to push data from database in the fields)
+        /* ----------------This method is created for logged in admin. ----------------*/
+        /* ---------------Using this method admin can add more categories that user can select to ask questions about --------------*/
         public ActionResult AddMessageCategory()
         {
             return View();
         }
 
-        //ADD: Feedback (Pull data from form and store in the database)
-        //This block of code execute when we click on submit button to add a new Feedback on the URL: /Feedback/Add
+        //ADD: Message Category (Pull data from form and store in the database)
+        //This block of code execute when we click on submit button to add a new Message Category 
         [HttpPost]
         public ActionResult AddMessageCategory(string category_name)
         {
@@ -71,11 +74,13 @@ namespace HospitalProject_Team4.Controllers
             //db.Database.ExecuteSqlCommand will execute "Insert" statement
             db.Database.ExecuteSqlCommand(query, parameter);
 
-            //again execute the List mehod to display new list of Feedback
+            //again execute the ListMessageCategory mehod to display new list of Message Categories
             return RedirectToAction("ListMessageCategory");
         }
 
-        // GET: Details of individual Feedback
+        // GET: Details of individual MessageCategory
+        /* ------------This method is created for logged in admin-----------------*/
+        /* ------------Admin can view the details of a selected message category using this method -------------*/
         public ActionResult ShowMessageCategory(int? id)
         {
             //if id is equal to NULL then, return BadRequest
@@ -86,7 +91,7 @@ namespace HospitalProject_Team4.Controllers
 
             MessageCategory messageCategory = db.MessageCategories.SqlQuery("select * from MessageCategories where category_id=@category_id", new SqlParameter("@category_id", id)).FirstOrDefault();
 
-            //if there is no feedback then, return HttpNotFound
+            //if there is no category then, return HttpNotFound
             if (messageCategory == null)
             {
                 return HttpNotFound();
@@ -95,24 +100,24 @@ namespace HospitalProject_Team4.Controllers
             return View(messageCategory);
         }
 
-        //Update: get information of a selected Brand
+        //Update: get information of a selected category
+        /* ----------This method is creted for logged in admin --------------*/
+        /* -----------Admin can update the message category using this method ----------*/
         public ActionResult UpdateMessageCategory(int id)
         {
-            //query to get information of selected Brand from database
+            //query to get information of selected category from database
             string query = "Select * from MessageCategories where category_id = @id";
             var parameter = new SqlParameter("@id", id);
             MessageCategory SelectedCategory = db.MessageCategories.SqlQuery(query, parameter).FirstOrDefault();
 
-            //give information of brand to us
             return View(SelectedCategory);
         }
 
-        //Update Brand in database
-        //This block of code execute when we click on submit button to update a Brand on the URL: /Brand/Update
+        //Update category in database
         [HttpPost]
         public ActionResult UpdateMessageCategory(int id, string category_name)
         {
-            //query to update brand in database
+            //query to update category in database
             string query = "Update MessageCategories set category_name = @category_name where category_id = @id";
 
             //check the update query
@@ -126,37 +131,38 @@ namespace HospitalProject_Team4.Controllers
             //db.Database.ExecuteSqlCommand will execute "Update" statement
             db.Database.ExecuteSqlCommand(query, sqlparams);
 
-            //this statement will execute the "List" method and provide updated List of Brands
+            //this statement will execute the "ListMessageCategory" method and provide updated List of message categories
             return RedirectToAction("ListMessageCategory");
         }
 
 
-        //Delete Feedback
-        //GET Data of selected Feedback
+        //Delete message category
+        //GET Data of selected category
+        /* ---------This method is created for logged in admin---------*/
+        /*-----------Admin can delete the selected category using this method -------------*/
         public ActionResult DeleteMessageCategory(int id)
         {
-            //query to get the selected Feedback
+            //query to get the selected category
             string query = "Select * from MessageCategories where category_id=@id";
             SqlParameter param = new SqlParameter("@id", id);
             MessageCategory SelectedCategory = db.MessageCategories.SqlQuery(query, param).FirstOrDefault();
 
-            //display the selected Feedback
+            //display the selected category
             return View(SelectedCategory);
         }
 
-        //Delete: Feedback (Delete data from the database)
-        //This block of code execute when we click on submit button to delete a Feedback on the URL: /Feedback/Delete
+        //Delete: category 
         [HttpPost]
         public ActionResult Delete(int id)
         {
-            //query to delete feedback from database
+            //query to delete category from database
             string query = "delete from MessageCategories where category_id=@id";
             SqlParameter param = new SqlParameter("@id", id);
             db.Database.ExecuteSqlCommand(query, param);
 
-            //redirect to List method to view updated list of Category
+            //redirect to List method to view updated list of Categories
             return RedirectToAction("ListMessageCategory");
         }
     }
 }
-    
+//Refernce taken from Christine's code    

@@ -12,10 +12,8 @@ namespace HospitalProject_Team4.Models
     {
         [Key, ForeignKey("ApplicationUser")]
         public string volunteer_id { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
-   
+        public virtual ApplicationUser ApplicationUser { get; set; }   
 
-      
         public int HasFile { get; set; }
         public string volunteer_FileExtension { get; set; }
         public string volunteer_specialization { get; set; }

@@ -8,7 +8,6 @@ using System.Data.SqlClient;
 using System.Data.Entity;
 using System.Net;
 using System.Diagnostics;
-// Require to use cultrueinfo.invariantculture to parse EventDate and EventTime:
 using System.Globalization;
 using HospitalProject_Team4.Models;
 using HospitalProject_Team4.Data;
@@ -17,6 +16,10 @@ namespace HospitalProject_Team4.Controllers
 {
     public class ContactUsController : Controller
     {
+
+        //I am not using Application user her for now 
+        //I am just performing CRUD opertions fot this feature
+
         //create object of database
         private HospitalProjectContext db = new HospitalProjectContext();
 
@@ -26,7 +29,8 @@ namespace HospitalProject_Team4.Controllers
             return View();
         }
 
-        // GET: Contact Us
+        // GET List: Contact Us
+        /* -------------This method is created for logged in admin. Admin can see the list of questions asked by the users in table format -----------*/
         public ActionResult ListContactUs(string contactSearchKey)
         {
             //debug line to test whether we get the input from search key
@@ -37,7 +41,7 @@ namespace HospitalProject_Team4.Controllers
 
             if (contactSearchKey != "" && contactSearchKey != null)
             {
-                //SQL equivalent
+                //LINQ is used to display the list of contact us
 
                 contactUs =
                     db.ContactUs
@@ -45,8 +49,6 @@ namespace HospitalProject_Team4.Controllers
                         contact.MessageCategories.category_name.Contains(contactSearchKey) ||
                         contact.question.Contains(contactSearchKey) ||
                         contact.date.ToString().Contains(contactSearchKey) 
-
-
                         ).ToList();
             }
             else
@@ -58,24 +60,26 @@ namespace HospitalProject_Team4.Controllers
         }
 
 
-        //ADD: Product (this method is used to push data from database in the fields)
+        //ADD: Contact Us (this method is used to push data from database in the fields)
+        /* ----------------This method is created for user whether loggin or not. ----------------*/
+        /* ---------------Using this method they can send their question to the hospiatl staff --------------*/
         public ActionResult AddContactUs()
         {
             //STEP 1: Push Data
-            //get a list of brands for productC:\Users\navjot\source\repos\PassionProject\PassionProject\Models\ViewModels\ShowCategory.cs
+            //get a list of MessageCategories for Contact Us
 
             List<MessageCategory> messageCategories = db.MessageCategories.SqlQuery("Select * from MessageCategories").ToList();
 
             return View(messageCategories);
         }
 
-        //ADD: Product (Pull data from form and store in the database)
-        //This block of code execute when we click on submit button to add a new product on the URL: /Product/Add
+        //ADD: Contact US (Pull data from form and store in the database)
+        //This block of code execute when we click on submit button to add a new contact us on the URL: /ContactUs/AddContactUs
         [HttpPost]
         public ActionResult AddContactUs(string first_name, string last_name, string email, string cell_phone, string question, int category_id)
         {
             //STEP 1: Pull data from the arguments of Add Method 
-            DateTime.ParseExact(EventDate + " " + EventTime, "yyyy-MM-dd Hmm", System.Globalization.CultureInfo.InvariantCulture);
+           
             //Debug line to know whether we are accessing correct data from Add Method 
             Debug.WriteLine("New query is" + question);
             DateTime current_date = DateTime.Now;
@@ -96,12 +100,14 @@ namespace HospitalProject_Team4.Controllers
             //db.Database.ExecuteSqlCommand will execute "Insert" statement
             db.Database.ExecuteSqlCommand(query, sqlparams);
 
-            //this statement will execute the "List" method and provide us a List of Products
+            //this statement will execute the "ListContactUs" method and provide us a List of Contact Us
             //The new product will also be displayed in the list
             return RedirectToAction("ListContactUs");
         }
 
         // GET: Details of individual ContactUs
+        /* ------------This method is created for logged in admin-----------------*/ 
+        /* ------------Admin can view the details of a selescted contact us using this method -------------*/
         public ActionResult ShowContactUs(int? id)
         {
             //if id is equal to NULL then, return BadRequest
@@ -122,6 +128,8 @@ namespace HospitalProject_Team4.Controllers
         }
 
         //Update: get information of a selected contact us
+        /* ----------This method is creted for logged in admin --------------*/
+        /* -----------Admin can send the answer of the asked question by using this method ----------*/
         public ActionResult UpdateContactUs(int id)
         {
             //query to get information of selected question from database
@@ -152,13 +160,15 @@ namespace HospitalProject_Team4.Controllers
             //db.Database.ExecuteSqlCommand will execute "Update" statement
             db.Database.ExecuteSqlCommand(query, sqlparams);
 
-            //this statement will execute the "List" method and provide updated List of Contact Us
+            //this statement will execute the "ListContactUs" method and provide updated List of Contact Us
             return RedirectToAction("ListContactUs");
         }
 
 
         //Delete ContactUs
         //GET Data of selected ContactUs
+        /* ---------This method is created for logged in admin---------*/
+        /*-----------Admin can delete the selected question/contact-us using this method -------------*/ 
         public ActionResult DeleteContactUs(int id)
         {
             //query to get the selected ContactUs
@@ -171,7 +181,7 @@ namespace HospitalProject_Team4.Controllers
         }
 
         //Delete: ContactUs (Delete data from the database)
-        //This block of code execute when we click on submit button to delete a ContactUs on the URL: /ContactUs/DeleteContactUs
+        //This block of code execute when we click on submit button to delete a ContactUs on the URL: /ContactUs/Delete
         [HttpPost]
         public ActionResult Delete(int id)
         {
@@ -185,4 +195,4 @@ namespace HospitalProject_Team4.Controllers
         }
     }
 }
-    
+//Refernce taken from Christine's code    

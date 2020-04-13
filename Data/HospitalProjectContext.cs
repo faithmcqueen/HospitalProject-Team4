@@ -29,9 +29,11 @@ namespace HospitalProject_Team4.Data
 
         //A logged in user could be an volunteer
         public virtual VolunteerRecruitment volunteer { get; set; }
-       
 
-        //A logged in user could be an Admin
+
+        //A logged in user will be an admin for FAQ Frequently Asked Question
+        public virtual FAQ FAQadmin { get; set; }
+
     }
     public class HospitalProjectContext : IdentityDbContext<ApplicationUser>
     {
@@ -44,6 +46,7 @@ namespace HospitalProject_Team4.Data
         }
 
         public System.Data.Entity.DbSet<HospitalProject_Team4.Models.Donation> Donation { get; set; }
+        public System.Data.Entity.DbSet<HospitalProject_Team4.Models.FAQ> FAQ { get; set; }
 
         public System.Data.Entity.DbSet<HospitalProject_Team4.Models.VolunteerRecruitment> volunteerRecruitment { get; set; }
         public System.Data.Entity.DbSet<HospitalProject_Team4.Models.Feedback> Feedbacks { get; set; }

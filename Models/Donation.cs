@@ -13,7 +13,7 @@ namespace HospitalProject_Team4.Models
         [Key, ForeignKey("ApplicationUser")]
         public string DonationID { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
-
+        
 
         public string donor_mail { get; set; }
         public int donation_amount { get; set; }
