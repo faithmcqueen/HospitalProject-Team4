@@ -52,5 +52,13 @@ namespace HospitalProject_Team4.Data
         public System.Data.Entity.DbSet<HospitalProject_Team4.Models.Feedback> Feedbacks { get; set; }
         public System.Data.Entity.DbSet<HospitalProject_Team4.Models.MessageCategory> MessageCategories { get; set; }
         public System.Data.Entity.DbSet<HospitalProject_Team4.Models.ContactUs> ContactUs { get; set; }
+
+        //Tables for job posting feature
+        public System.Data.Entity.DbSet<HospitalProject_Team4.Models.Application> Applications { get; set; }
+        public System.Data.Entity.DbSet<HospitalProject_Team4.Models.JobPosting> JobPostings { get; set; }
+        public System.Data.Entity.DbSet<HospitalProject_Team4.Models.Department> Departments { get; set; }
+        //Tables for parking spot booking system
+        public System.Data.Entity.DbSet<HospitalProject_Team4.Models.ParkingSpot> ParkingSpots { get; set; }
+        public System.Data.Entity.DbSet<HospitalProject_Team4.Models.SpotBooking> SpotBookings { get; set; }
     }
 }

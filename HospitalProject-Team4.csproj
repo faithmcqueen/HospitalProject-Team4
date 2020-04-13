@@ -300,13 +300,18 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Application.cs" />
     <Compile Include="Models\ContactUs.cs" />
+    <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Donation.cs" />
     <Compile Include="Models\Feedback.cs" />
     <Compile Include="Models\FAQ.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\JobPosting.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MessageCategory.cs" />
+    <Compile Include="Models\ParkingSpot.cs" />
+    <Compile Include="Models\SpotBooking.cs" />
     <Compile Include="Models\VolunteerRecruitment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
