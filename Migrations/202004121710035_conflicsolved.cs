@@ -3,7 +3,7 @@ namespace HospitalProject_Team4.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class conflicsolved : DbMigration
     {
         public override void Up()
         {
@@ -25,6 +25,7 @@ namespace HospitalProject_Team4.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        IsAdmin = c.Boolean(nullable: false),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
@@ -52,18 +53,6 @@ namespace HospitalProject_Team4.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
-            
-            CreateTable(
-                "dbo.FAQs",
-                c => new
-                    {
-                        FAQId = c.String(nullable: false, maxLength: 128),
-                        question = c.String(),
-                        answer = c.String(),
-                    })
-                .PrimaryKey(t => t.FAQId)
-                .ForeignKey("dbo.AspNetUsers", t => t.FAQId)
-                .Index(t => t.FAQId);
             
             CreateTable(
                 "dbo.AspNetUserLogins",
@@ -105,6 +94,16 @@ namespace HospitalProject_Team4.Migrations
                 .Index(t => t.volunteer_id);
             
             CreateTable(
+                "dbo.FAQs",
+                c => new
+                    {
+                        FAQId = c.Int(nullable: false, identity: true),
+                        question = c.String(),
+                        answer = c.String(),
+                    })
+                .PrimaryKey(t => t.FAQId);
+            
+            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
@@ -123,22 +122,20 @@ namespace HospitalProject_Team4.Migrations
             DropForeignKey("dbo.VolunteerRecruitments", "volunteer_id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
-            DropForeignKey("dbo.FAQs", "FAQId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.VolunteerRecruitments", new[] { "volunteer_id" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
-            DropIndex("dbo.FAQs", new[] { "FAQId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.Donations", new[] { "DonationID" });
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.FAQs");
             DropTable("dbo.VolunteerRecruitments");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");
-            DropTable("dbo.FAQs");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.Donations");

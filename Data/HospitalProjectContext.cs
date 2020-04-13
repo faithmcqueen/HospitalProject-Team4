@@ -32,7 +32,7 @@ namespace HospitalProject_Team4.Data
 
 
         //A logged in user will be an admin for FAQ Frequently Asked Question
-        public virtual FAQ FAQadmin { get; set; }
+        public bool IsAdmin { get; set; }
 
     }
     public class HospitalProjectContext : IdentityDbContext<ApplicationUser>
@@ -46,7 +46,7 @@ namespace HospitalProject_Team4.Data
         }
 
         public System.Data.Entity.DbSet<HospitalProject_Team4.Models.Donation> Donation { get; set; }
-        public System.Data.Entity.DbSet<HospitalProject_Team4.Models.FAQ> FAQ { get; set; }
+        public System.Data.Entity.DbSet<HospitalProject_Team4.Models.FAQ> FAQs { get; set; }
 
         public System.Data.Entity.DbSet<HospitalProject_Team4.Models.VolunteerRecruitment> volunteerRecruitment { get; set; }
         public System.Data.Entity.DbSet<HospitalProject_Team4.Models.Feedback> Feedbacks { get; set; }
