@@ -30,3 +30,23 @@
   | ------- | ----------- | ----- |
   | Models/Donation.cs | This file contains the class of Donation which defines the columns of the database . | Shubham Patel | 
   | Controllers/Donation.cs | This file contains the code to handle all the CRUD operations of donation and will guide the views to display | Shubham Patel |
+
+
+## Team Member - Navjot Gill(n01359105)
+  - Feature One : Feedback 
+  1. Adding New Feedback 
+  2. View Feedback
+  3. Updating Feedback
+  4. Deleting Feedback
+  
+  | File | Description | Author |
+  | ------- | ----------- | ----- |
+  | Data/HospitalProjectContext.cs | This file is used to create connection with the database and adding models. | Navjot Gill |
+  | Models/Feedback.cs | In this file columns of database are defined for feedback class . | Navjot Gill |
+  | Controllers/FeedbackController.cs | This file holds all the methods that are required to perform CRUD operations. | Navjot Gill | 
+  | Web.Config | This file is modified for the database configuration. | Navjot Gill |
+  | Views/Feedback/AddFeedback.cshtml | This file is used to create user interface for user and using that they can send their feedback. | Navjot Gill | 
+  | Views/Feedback/ListOfFeedbacks.cshtml | This file will display a list of all feedbacks sent by the users to the admin in a table format and each item will have links to view, delete and update. | Navjot Gill |
+  | Views/Feedback/UpdateFeedback.cshtml | This file will allow the admin to edit the comment and upload it on the website. | Navjot Gill |
+  | Views/Feedback/DeleteFeedback.cshtml | This file will allow the admin to delete the feedback permanently from the database. | Navjot Gill |
+  | Views/Feedback/ShowFeedback.cshtml | This file will allow the admin to view the feedback details in non-editable format and it will also have links to delete and update the feedback . | Navjot Gill |
