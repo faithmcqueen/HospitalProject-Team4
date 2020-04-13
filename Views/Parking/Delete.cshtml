@@ -1,0 +1,12 @@
+﻿@model HospitalProject_Team4.Models.SpotBooking
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Are you sure you want to delete your booking?</h2>
+<div class="navbar">
+    <a class="btn btn-secondary" href="/Parking/Show/@Model.SpotBookingID">Cancel</a>
+</div>
+<form method="POST" action="/Parking/Delete/@Model.SpotBookingID">
+    <div><input class="btn btn-danger" type="submit" value="Confirm" /></div>
+</form>

@@ -1,0 +1,84 @@
+﻿@model List<HospitalProject_Team4.Models.ParkingSpot>
+@{
+    ViewBag.Title = "List";
+}
+<h2>Available Parking Spaces</h2>
+<div class="paginate">
+    @{
+        <a href="/Parking/List?pagenum=@((int)ViewData["pagenum"] - 1)&parksearchkey=@ViewData["parksearchkey"]">Prev</a>
+        @ViewData["pagesummary"]
+        <a href="/Parking/List?pagenum=@((int)ViewData["pagenum"] + 1)&parksearchkey=@ViewData["parksearchkey"]">Next</a>
+    }
+</div>
+<form action="/Parking/List" method="GET">
+    <input type="text" name="parksearchkey" id="parksearchkey" />
+    <input type="submit" value="Search" />
+</form>
+<h3>LaVerendrye General Hospital Auxiliary</h3>
+<div class="tilecontainer">
+    @{
+        foreach (var ParkingSpot in Model)
+        {
+            <div class="listitem">
+                @{
+                    if (ParkingSpot.branch == "La Verendrye Hospital")
+                    {
+                        <div class="itemdetails">
+                            <div class="">Lot: <span>@ParkingSpot.lot</span></div>
+                            <div class="">Space Location: <span>@ParkingSpot.location</span></div>
+                            <a class="btn btn-secondary" href="Parking/Book/@ParkingSpot.SpotID">Book Now</a>
+                        </div>
+                        <div style="clear:both;"></div>
+                    }
+                }
+            </div>
+        }
+    }
+    <div style="clear:both;"></div>
+</div>
+<h3>Rainy River Health Centre</h3>
+<div class="tilecontainer">
+    @{
+        foreach (var ParkingSpot in Model)
+        {
+            <div class="listitem">
+                @{
+                    if (ParkingSpot.branch == "Rainy River Health Centre")
+                    {
+                        <div class="itemdetails">
+                            <div class="">Lot: <span>@ParkingSpot.lot</span></div>
+                            <div class="">Space Location: <span>@ParkingSpot.location</span></div>
+                            <a class="btn btn-secondary" " href="Parking/Book/@ParkingSpot.SpotID">Book Now</a>
+                        </div>
+                        <div style="clear:both;"></div>
+                    }
+                }
+            </div>
+        }
+    }
+    <div style="clear:both;"></div>
+</div>
+<h3>Emo & District Auxiliary</h3>
+<div class="tilecontainer">
+    @{
+        foreach (var ParkingSpot in Model)
+        {
+            <div class="listitem">
+                @{
+                    if (ParkingSpot.branch == "Emo Health Centre")
+                    {
+                        <div class="itemdetails">
+                            <div class="">Lot: <span>@ParkingSpot.lot</span></div>
+                            <div class="">Space Location: <span>@ParkingSpot.location</span></div>
+                            <a class="btn btn-secondary" href="Parking/Book/@ParkingSpot.SpotID">Book Now</a>
+                        </div>
+                        <div style="clear:both;"></div>
+                    }
+                }
+            </div>
+        }
+    }
+    <div style="clear:both;"></div>
+</div>
+
+

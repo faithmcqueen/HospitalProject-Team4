@@ -415,6 +415,11 @@
     <Content Include="Views\Jobs\New.cshtml" />
     <Content Include="Views\Jobs\AdminList.cshtml" />
     <Content Include="Views\Jobs\AdminShow.cshtml" />
+    <Content Include="Views\Parking\List.cshtml" />
+    <Content Include="Views\Parking\Book.cshtml" />
+    <Content Include="Views\Parking\Delete.cshtml" />
+    <Content Include="Views\Parking\Show.cshtml" />
+    <Content Include="Views\Parking\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

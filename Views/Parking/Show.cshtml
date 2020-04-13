@@ -1,0 +1,20 @@
+﻿@model HospitalProject_Team4.Models.ViewModels.BookParkingSpot
+@{
+    ViewBag.Title = "Show";
+}
+<h2>View Booked Space</h2>
+<a class="btn btn-secondary" href="Parking/Update/@Model.ParkingSpot.SpotID">Book Now</a>
+@{
+    if (Model.SpotBooking.SpotID == Model.ParkingSpot.SpotID)
+    {
+        <h3>Spot Details:</h3>
+        <span>Space: @Model.ParkingSpot.lot, @Model.ParkingSpot.location</span>
+        <span>Start: @Model.SpotBooking.StartDate</span>
+        <span>End: @Model.SpotBooking.EndDate</span>
+        <h3>Personal Details:</h3>
+        <span>Booked by: </span>
+        <span>Email: </span>
+        <span>Phone: </span>
+        <span>License Plate: </span>
+    }
+}

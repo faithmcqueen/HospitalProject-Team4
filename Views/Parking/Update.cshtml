@@ -1,0 +1,45 @@
+﻿@model HospitalProject_Team4.Models.ViewModels.BookParkingSpot
+@{
+    ViewBag.Title = "Book";
+}
+<h2>Book Your Parking Spot</h2>
+<a class="btn btn-secondary" href="/Parking/List">Back to List</a>
+<form method="POST" action="/Parking/Update/@Model.SpotBooking.SpotBookingID">
+    <div class="inpfield">
+        <span>Spot:</span>
+        <select id="SpotID" type="text" name="SpotID">
+            @{
+                //Create a drop down for parking spots with a rendering loop
+                foreach (var spot in Model.ParkingSpots)
+                {
+                    var selected = "";
+
+                    if (Model.ParkingSpot.SpotID == Model.SpotBooking.SpotID)
+                    {
+                        selected = "selected";
+                    }
+                    <option value="@spot.SpotID" @selected>@spot.lot, @spot.location</option>
+                }
+            }
+        </select>
+    </div>
+    <div class="inpfield">
+        <span>Start Date:</span><input id="StartDate" type="text" name="StartDate" value="@Model.SpotBooking.StartDate" />
+        <span>Start Time:</span><input id="StartTime" type="text" name="StartTime" />
+    </div>
+    <div class="inpfield">
+        <span>End Date:</span><input id="EndDate" type="text" name="EndDate" value="@Model.SpotBooking.EndDate" />
+        <span>End Time:</span><input id="EndTime" type="text" name="EndTime" />
+    </div>
+    <span>Personal Information:</span>
+    <div class="inpfield">
+        <span>Name:</span><input id="Name" type="text" name="Name" placeholder="John Smith" value="@Model.SpotBooking.EndDate" />
+        <span>Email:</span><input id="Email" type="text" name="Email" placeholder="example@example.com" />
+        <span>Phone:</span><input id="Phone" type="text" name="Phone" placeholder="555-0123-4567" />
+        <span>License Plate:</span><input id="LicensePlate" type="text" name="LicensePlate" />
+    </div>
+
+    <div class="inpfield">
+        <input class="btn btn-success" type="submit" value="Book Space">
+    </div>
+</form>
