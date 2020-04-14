@@ -101,3 +101,35 @@
   | Views/AspNetUSer/Update.cshtml | This file will allow the user to edit any changes he wants before registering . | Bhanudai Khairwal |
   | Views/AspNetUser/DeleteConfirm.cshtml | This file is a confirmation file before deleting any user. | Bhanudai Khairwal |
   
+  ##Team Member: Rose Zhan
+
+  Feature One: MVP
+  1. Add page
+  2. Update page
+  3. Delete page
+  4. Read page
+
+  | File | Description | Author |
+  | ------- | ----------- | ----- |
+  | Models/Page.cs | This file contains the page class to define the Page table| Rose Zhan | 
+  | Models/Navigation.cs | This file contains the navigcation class to define the navigation table| Rose Zhan | 
+  | Controllers/NavPageController.cs | For performing CRUD operations | Rose Zhan |
+  | Views/NavPages/AddNew.cshtml | This file is the user interface where a new page will be added. |Rose Zhan |
+  | Views/NavPages/NavList.cshtml | This file will list all the users with admin privileges to update and delete. | Rose Zhan|
+  | Views/NavPages/Show.cshtml | This file is for viewing individual pages. | Rose Zhan
+  | Views/NavPages/Update.cshtml | This file will allow admins to make changes to existing pages | Rose Zhan |
+  | Views/NavePages/ConfirmDelete.cshtml | This file is a confirmation file before deleting page| Rose Zhan|
+
+  Feature Two: Newsroom
+  1. Add new Articles and Authors 
+  2. View Article
+  3. Delete Articles and Authors
+  4. Update Articles and Authors
+  (Articles update, delete, and all Author CRUD in-progress)
+
+  | File | Description | Author |
+  | ------- | ----------- | ----- |
+  | Models/Article.cs | This file contains the article class to define the Articles table| Rose Zhan | 
+  | Models/Authors.cs | This file contains the authors class to define the Authors table| Rose Zhan | 
+  | Controllers/ArticleController.cs | For performing CRUD operations for Article | Rose Zhan |
+  | Views/NavPages/Add.cshtml | This file is the user interface where a new article will be added. |Rose Zhan |
