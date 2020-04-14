@@ -24,8 +24,8 @@ namespace HospitalProject_Team4.Controllers
     {
         //reference login functions:
 
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
+        //private ApplicationSignInManager _signInManager;
+        //private ApplicationUserManager _userManager;
 
         private HospitalProjectContext db = new HospitalProjectContext();
 
@@ -42,14 +42,14 @@ namespace HospitalProject_Team4.Controllers
 
             //Next we pass through our search key and use it with an if statement
 
-            if (parksearchkey != "")
+            /*if (parksearchkey != "")
             {
                 query = query + "WHERE branch like @searchkey";
                 //create new parameter for searchkey value
-                sqlparams.Add(new SqlParameter("@searchkey", "%" + parksearchkey + "%"));
+                sqlparams.Add(new SqlParameter("@searchkey", "'%" + parksearchkey + "%'"));
                 //Write a debug line to make sure our SQL query is written correctly
                 Debug.WriteLine("The query is " + query);
-            }
+            }*/
 
             List<ParkingSpot> parkingspots = db.ParkingSpots.SqlQuery(query, sqlparams.ToArray()).ToList();
 
@@ -97,8 +97,14 @@ namespace HospitalProject_Team4.Controllers
         }  //END ActionResult Show
 
         //SET : New parking space booking (PUBLIC)
-        public ActionResult Book()
+        public ActionResult Book(int id)
         {
+            string query = "SELECT * FROM ParkingSpots WHERE SpotID = @spotid";
+            var parameter = new SqlParameter("@spotid", id);
+            db.Database.ExecuteSqlCommand(query, parameter);
+            /*ParkingSpot selectedspot = db.ParkingSpots.SqlQuery("SELECT * FROM ParkingSpots WHERE SpotID = @spotid", new SqlParameter("@spotid", SpotID)).FirstOrDefault();
+            BookParkingSpot BookParkingSpotViewModel = new BookParkingSpot();
+            BookParkingSpotViewModel.ParkingSpot = selectedspot;*/
             return View();
         }
         // Method for after the booking form has been filled out and submitted

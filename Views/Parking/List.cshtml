@@ -3,35 +3,24 @@
     ViewBag.Title = "List";
 }
 <h2>Available Parking Spaces</h2>
-<div class="paginate">
-    @{
-        <a href="/Parking/List?pagenum=@((int)ViewData["pagenum"] - 1)&parksearchkey=@ViewData["parksearchkey"]">Prev</a>
-        @ViewData["pagesummary"]
-        <a href="/Parking/List?pagenum=@((int)ViewData["pagenum"] + 1)&parksearchkey=@ViewData["parksearchkey"]">Next</a>
-    }
-</div>
-<form action="/Parking/List" method="GET">
+<form action="/List" method="GET">
     <input type="text" name="parksearchkey" id="parksearchkey" />
     <input type="submit" value="Search" />
 </form>
 <h3>LaVerendrye General Hospital Auxiliary</h3>
 <div class="tilecontainer">
     @{
-        foreach (var ParkingSpot in Model)
+        foreach (var spot in Model)
         {
-            <div class="listitem">
-                @{
-                    if (ParkingSpot.branch == "La Verendrye Hospital")
+                    if (spot.branch == "La Verendrye Hospital")
                     {
                         <div class="itemdetails">
-                            <div class="">Lot: <span>@ParkingSpot.lot</span></div>
-                            <div class="">Space Location: <span>@ParkingSpot.location</span></div>
-                            <a class="btn btn-secondary" href="Parking/Book/@ParkingSpot.SpotID">Book Now</a>
+                            <div class="">Lot: <span>@spot.lot</span></div>
+                            <div class="">Space Location: <span>@spot.location</span></div>
+                            <a class="btn btn-secondary" href="/Parking/Book/@spot.SpotID">Book Now</a>
                         </div>
                         <div style="clear:both;"></div>
                     }
-                }
-            </div>
         }
     }
     <div style="clear:both;"></div>
@@ -39,21 +28,18 @@
 <h3>Rainy River Health Centre</h3>
 <div class="tilecontainer">
     @{
-        foreach (var ParkingSpot in Model)
+        foreach (var pspot in Model)
         {
-            <div class="listitem">
-                @{
-                    if (ParkingSpot.branch == "Rainy River Health Centre")
+                    if (pspot.branch == "Rainy River Health Centre")
                     {
                         <div class="itemdetails">
-                            <div class="">Lot: <span>@ParkingSpot.lot</span></div>
-                            <div class="">Space Location: <span>@ParkingSpot.location</span></div>
-                            <a class="btn btn-secondary" " href="Parking/Book/@ParkingSpot.SpotID">Book Now</a>
+                            <div class="">Lot: <span>@pspot.lot</span></div>
+                            <div class="">Space Location: <span>@pspot.location</span></div>
+                            <a class="btn btn-secondary" href="/Parking/Book/@pspot.SpotID">Book Now</a>
                         </div>
                         <div style="clear:both;"></div>
                     }
-                }
-            </div>
+
         }
     }
     <div style="clear:both;"></div>
@@ -61,21 +47,17 @@
 <h3>Emo & District Auxiliary</h3>
 <div class="tilecontainer">
     @{
-        foreach (var ParkingSpot in Model)
+        foreach (var pSpot in Model)
         {
-            <div class="listitem">
-                @{
-                    if (ParkingSpot.branch == "Emo Health Centre")
+                    if (pSpot.branch == "Emo Health Centre")
                     {
                         <div class="itemdetails">
-                            <div class="">Lot: <span>@ParkingSpot.lot</span></div>
-                            <div class="">Space Location: <span>@ParkingSpot.location</span></div>
-                            <a class="btn btn-secondary" href="Parking/Book/@ParkingSpot.SpotID">Book Now</a>
+                            <div class="">Lot: <span>@pSpot.lot</span></div>
+                            <div class="">Space Location: <span>@pSpot.location</span></div>
+                            <a class="btn btn-secondary" href="/Parking/Book/@pSpot.SpotID">Book Now</a>
                         </div>
                         <div style="clear:both;"></div>
                     }
-                }
-            </div>
         }
     }
     <div style="clear:both;"></div>

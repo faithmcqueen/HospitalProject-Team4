@@ -133,3 +133,50 @@
   | Models/Authors.cs | This file contains the authors class to define the Authors table| Rose Zhan | 
   | Controllers/ArticleController.cs | For performing CRUD operations for Article | Rose Zhan |
   | Views/NavPages/Add.cshtml | This file is the user interface where a new article will be added. |Rose Zhan |
+
+   ##Team Member: Faith McQueen
+
+  Feature One: Job Portal
+  1. Public view of all job posts
+  2. Admin view of all job posts
+  3. Public view of individual job posts
+  4. Admin view of individual job posts
+  5. Delete job posts
+  6. Update job posts
+  7. Add new job posts
+  8. Apply for job (public application form)
+
+  | File | Description | Author |
+  | ------- | ----------- | ----- |
+  | Models/JobPosting.cs | This file contains the class to define the JobPostings table| Faith McQueen | 
+  | Models/Application.cs | This file contains the class to define the Applications table| Faith McQueen | 
+  | Models/Departments.cs | This file contains the class to define the Departments table | Faith McQueen |
+  | Models/ViewModels/ListPosting.cs | The class that allows us to access the JobPostings and Departments tables | Faith McQueen |
+  | Models/ViewModels/UpdatePosting.cs | The class that allows us to access the JobPostings, Departments and Applications tables | Faith McQueen |
+  | Controllers/JobsController.cs | CRUD operations for the job portal | Faith McQueen |
+  | Views/Jobs/AdminList.cshtml | An admin view of all current job posts with links to CRUD functions. | Faith McQueen |
+  | Views/Jobs/AdminShow.cshtml | The admin view of individual job posts, with links to CRUD functions. | Faith McQueen |
+  | Views/Jobs/Show.cshtml | A public view of an individual job post | Faith McQueen |
+  | Views/Jobs/List.cshtml | A public list of current job postings. | RFaith McQueen |
+  | Views/Jobs/New.cshtml | This is for admin to add new job oists. | Faith McQueen |
+  | Views/Jobs/Update.cshtml | This file will allow admins to make changes to existing job posts | Faith McQueen |
+  | Views/Jobs/Delete.cshtml | This file is a confirmation file before deleting a job post | Faith McQueen |
+
+  Feature Two: Parking Spot Booking
+  1. View all parking spaces 
+  2. Book a parking space
+  3. Admin view of all parking space bookings
+  4. Update parking space bookings
+  5. Delete parking space bookings
+
+  | File | Description | Author |
+  | ------- | ----------- | ----- |
+  | Models/ParkingSpot.cs | The class that defines the ParkingSpots table | Faith McQueen |
+  | Models/SpotBooking.cs | The class that defines the SpotBooking table | Faith McQueen |
+  | Models/ViewModels/BookParkingSpot.cs | The class that allows us to access the ParkingSpot and SpotBooking tables | Faith McQueen |
+  | Controllers/ParkingController.cs | CRUD functions for the parking feature | Faith McQueen |
+  | Views/Parking/AdminList.cshtml | The admin view of all parking spot bookings | Faith McQueen |
+  | Views/Parking/Book.cshtml | The interface for booking a parking space | Faith McQueen |
+  | Views/Parking/Delete.cshtml | Confirmation of deletion of a parking space booking | Faith McQueen |
+  | Views/Parking/Show.cshtml | A view of individual bookings with links to CRUD functions | Faith McQueen |
+  | View/Parking/Update.cshtml | Interface for updating a parking space booking. | Faith McQuee |

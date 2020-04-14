@@ -16,8 +16,8 @@ namespace HospitalProject_Team4.Controllers
     public class JobsController : Controller
     {
         //Reference user application
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
+        //private ApplicationSignInManager _signInManager;
+        //private ApplicationUserManager _userManager;
 
         private HospitalProjectContext db = new HospitalProjectContext();
 
