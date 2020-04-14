@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "AddNew";
+}
+
+<h1>Add New Page</h1>
+<form method="post" action="Page/Add">
+    <div>
+        <label for="navLabel">Navigation Title:</label>
+        <input type="text" name="navLabel" id="navLabel" />
+    </div>
+    <div>
+        <label for="navUrl">URL Text:</label>
+        <input type="text" name="navUrl" id="navUrl" /><span>(Lower case letters and dashes only)</span>
+    </div>
+    <div>
+        <label for="pageTitle">Page Title:</label>
+        <input type="text" name="pageTitle" id="pageTitle" /><span>(If different from Navigation Title)</span>
+    </div>
+    <div>
+        <label for="pageContent">Page Content:</label>
+        <textarea rows="5" cols="20" name="pageContent" id="pageContent"></textarea>
+    </div>
+    <div>
+        <button type="submit">Add</button>
+    </div>
+    <div>
+    </div>
+</form>
+

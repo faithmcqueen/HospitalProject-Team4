@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Show";
+}
+
+<h1>@Model.Page.Title</h1>
+
+<div>
+    <div>
+        @Model.Page.Content
+    </div>
+</div>
+<a href="/Nav/Update/@Model.Navigation.nav_id">Update</a>
+<a href="/Nav/ConfirmDelete/@Model.Navigation.nav_id">Delete</a>

@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add New Article</h2>
+
+<div>
+    <a href="/Article/List">Back to All</a>
+</div>
+<form method="post" action="/Article/Add">
+    <div>
+        <label for="title">Headline:</label>
+        <input type="text" name="title" id="title" />
+    </div>
+    <div>
+        <label for="author">Author:</label>
+        <select id="author" type="text" name="author">
+               @{ 
+                   //rendering loop for all Authors to be selected
+                   //from a dropdown menu
+                   foreach(var authors in Model)
+                   {
+                       <option value="@authors.author_id">@authors.first_name @authors.last_name</option>
+                   }
+               }
+        </select>
+    </div>
+    <div>
+        <label for="content">Details:</label>
+        <textarea name="content" id="content" cols="20" rows="5"></textarea>
+    </div>
+</form>

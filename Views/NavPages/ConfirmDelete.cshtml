@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "ConfirmDelete";
+}
+
+<h2>Are you sure you want to delete @Model.Navigation.title</h2>
+
+<form method="post" action="/Navigation/Delete/@Model.nav_id">
+    <input type="submit" value="Delete Page" />
+</form>
