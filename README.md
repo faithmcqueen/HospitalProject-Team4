@@ -134,7 +134,7 @@
   | Controllers/ArticleController.cs | For performing CRUD operations for Article | Rose Zhan |
   | Views/NavPages/Add.cshtml | This file is the user interface where a new article will be added. |Rose Zhan |
 
-   ##Team Member: Faith McQueen
+   ##Team Member: Faith McQueen (n01237816)
 
   Feature One: Job Portal
   1. Public view of all job posts
