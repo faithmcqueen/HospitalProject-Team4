@@ -263,8 +263,10 @@
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\FAQController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MessageCategoryController.cs" />
+    <Compile Include="Controllers\ParkingController.cs" />
     <Compile Include="Controllers\VolunteerRecruitmentController.cs" />
     <Compile Include="Data\HospitalProjectContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -293,6 +295,10 @@
     <Compile Include="Migrations\202004102043040_contact-reply.cs" />
     <Compile Include="Migrations\202004102043040_contact-reply.Designer.cs">
       <DependentUpon>202004102043040_contact-reply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004132055395_parkandjob.cs" />
+    <Compile Include="Migrations\202004132055395_parkandjob.Designer.cs">
+      <DependentUpon>202004132055395_parkandjob.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202004132221405_volunteer.cs" />
     <Compile Include="Migrations\202004132221405_volunteer.Designer.cs">
@@ -420,6 +426,7 @@
     <Content Include="Views\Parking\Delete.cshtml" />
     <Content Include="Views\Parking\Show.cshtml" />
     <Content Include="Views\Parking\Update.cshtml" />
+    <Content Include="Views\Parking\AdminList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -456,6 +463,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004102043040_contact-reply.resx">
       <DependentUpon>202004102043040_contact-reply.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004132055395_parkandjob.resx">
+      <DependentUpon>202004132055395_parkandjob.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004132221405_volunteer.resx">
       <DependentUpon>202004132221405_volunteer.cs</DependentUpon>

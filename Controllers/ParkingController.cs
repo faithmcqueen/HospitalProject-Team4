@@ -58,7 +58,7 @@ namespace HospitalProject_Team4.Controllers
         }  //END ActionResult List
 
         //GET: List of all parking spot bookings (Public)
-        public ActionResult AdminList()
+        public ActionResult AdminList(string bookingsearchkey)
         {
             //Start building the query
             string query = "SELECT * FROM SpotBookings JOIN ParkingSpots ON SpotBookings.SpotID = ParkingSpots.SpotID";
@@ -66,11 +66,11 @@ namespace HospitalProject_Team4.Controllers
 
             //Next we pass through our search key and use it with an if statement
 
-            if (parksearchkey != "")
+            if (bookingsearchkey != "")
             {
                 query = query + "WHERE branch like @searchkey";
                 //create new parameter for searchkey value
-                sqlparams.Add(new SqlParameter("@searchkey", "%" + parksearchkey + "%"));
+                sqlparams.Add(new SqlParameter("@searchkey", "%" + bookingsearchkey + "%"));
                 //Write a debug line to make sure our SQL query is written correctly
                 Debug.WriteLine("The query is " + query);
             }
