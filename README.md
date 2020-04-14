@@ -29,6 +29,10 @@
   | ------- | ----------- | ----- |
   | Models/Donation.cs | This file contains the class of Donation which defines the columns of the database . | Shubham Patel | 
   | Controllers/Donation.cs | This file contains the code to handle all the CRUD operations of donation and will guide the views to display | Shubham Patel |
+  | Views/Donation/Add.cshtml | This file will allow a user to make donation by filling out a form. Also, it will do registration if the donor is not a registered user. | Shubham Patel |
+  | Views/Donation/List.cshtml | This file will list all the donors and it is managed by the admin. | Shubham Patel |
+  | Views/Donation/Update.cshtml | This file will allow the donors to edit their specific details. | Shubham Patel |
+  | Views/Donation/DeleteConfirm.cshtml | This file is a confirmation file before deleting any donor. Note that this access is only available to admin and no donor can modify each other details. | Shubham Patel |
 
 
 ## Team Member - Navjot Gill(n01359105)
