@@ -1,84 +1,45 @@
-﻿@model List<HospitalProject_Team4.Models.ParkingSpot>
+﻿@model HospitalProject_Team4.Models.ViewModels.BookParkingSpot
 @{
-    ViewBag.Title = "List";
+    ViewBag.Title = "Book";
 }
-<h2>Available Parking Spaces</h2>
-<div class="paginate">
-    @{
-        <a href="/Parking/List?pagenum=@((int)ViewData["pagenum"] - 1)&parksearchkey=@ViewData["parksearchkey"]">Prev</a>
-        @ViewData["pagesummary"]
-        <a href="/Parking/List?pagenum=@((int)ViewData["pagenum"] + 1)&parksearchkey=@ViewData["parksearchkey"]">Next</a>
-    }
-</div>
-<form action="/Parking/List" method="GET">
-    <input type="text" name="parksearchkey" id="parksearchkey" />
-    <input type="submit" value="Search" />
+<h2>Book Your Parking Spot</h2>
+<a class="btn btn-secondary" href="/Parking/List">Back to List</a>
+<form method="POST" action="/Parking/Book/@Model.ParkingSpot.SpotID">
+    <div class="inpfield">
+        <span>Spot:</span>
+        <select id="SpotID" type="text" name="SpotID">
+            @{
+                //Create a drop down for parking spots with a rendering loop
+                foreach (var spot in Model.ParkingSpots)
+                {
+                    var selected = "";
+
+                    if (Model.ParkingSpot.SpotID == Model.SpotBooking.SpotID)
+                    {
+                        selected = "selected";
+                    }
+                    <option value="@spot.SpotID" @selected>@spot.lot, @spot.location</option>
+                }
+            }
+        </select>
+    </div>
+    <div class="inpfield">
+        <span>Start Date:</span><input id="StartDate" type="text" name="StartDate" />
+        <span>Start Time:</span><input id="StartTime" type="text" name="StartTime" />
+    </div>
+    <div class="inpfield">
+        <span>End Date:</span><input id="EndDate" type="text" name="EndDate" />
+        <span>End Time:</span><input id="EndTime" type="text" name="EndTime" />
+    </div>
+    <span>Personal Information:</span>
+    <div class="inpfield">
+        <span>Name:</span><input id="Name" type="text" name="Name" placeholder="John Smith" />
+        <span>Email:</span><input id="Email" type="text" name="Email" placeholder="example@example.com" />
+        <span>Phone:</span><input id="Phone" type="text" name="Phone" placeholder="555-0123-4567" />
+        <span>License Plate:</span><input id="LicensePlate" type="text" name="LicensePlate" />
+    </div>
+
+    <div class="inpfield">
+        <input class="btn btn-success" type="submit" value="Book Space">
+    </div>
 </form>
-<h3>LaVerendrye General Hospital Auxiliary</h3>
-<div class="tilecontainer">
-    @{
-        foreach (var ParkingSpot in Model)
-        {
-            <div class="listitem">
-                @{
-                    if (ParkingSpot.branch == "La Verendrye Hospital")
-                    {
-                        <div class="itemdetails">
-                            <div class="">Lot: <span>@ParkingSpot.lot</span></div>
-                            <div class="">Space Location: <span>@ParkingSpot.location</span></div>
-                            <a class="btn btn-secondary" href="Parking/Book/@ParkingSpot.SpotID">Book Now</a>
-                        </div>
-                        <div style="clear:both;"></div>
-                    }
-                }
-            </div>
-        }
-    }
-    <div style="clear:both;"></div>
-</div>
-<h3>Rainy River Health Centre</h3>
-<div class="tilecontainer">
-    @{
-        foreach (var ParkingSpot in Model)
-        {
-            <div class="listitem">
-                @{
-                    if (ParkingSpot.branch == "Rainy River Health Centre")
-                    {
-                        <div class="itemdetails">
-                            <div class="">Lot: <span>@ParkingSpot.lot</span></div>
-                            <div class="">Space Location: <span>@ParkingSpot.location</span></div>
-                            <a class="btn btn-secondary" " href="Parking/Book/@ParkingSpot.SpotID">Book Now</a>
-                        </div>
-                        <div style="clear:both;"></div>
-                    }
-                }
-            </div>
-        }
-    }
-    <div style="clear:both;"></div>
-</div>
-<h3>Emo & District Auxiliary</h3>
-<div class="tilecontainer">
-    @{
-        foreach (var ParkingSpot in Model)
-        {
-            <div class="listitem">
-                @{
-                    if (ParkingSpot.branch == "Emo Health Centre")
-                    {
-                        <div class="itemdetails">
-                            <div class="">Lot: <span>@ParkingSpot.lot</span></div>
-                            <div class="">Space Location: <span>@ParkingSpot.location</span></div>
-                            <a class="btn btn-secondary" href="Parking/Book/@ParkingSpot.SpotID">Book Now</a>
-                        </div>
-                        <div style="clear:both;"></div>
-                    }
-                }
-            </div>
-        }
-    }
-    <div style="clear:both;"></div>
-</div>
-
-

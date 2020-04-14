@@ -263,16 +263,14 @@
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\FAQController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MessageCategoryController.cs" />
+    <Compile Include="Controllers\ParkingController.cs" />
     <Compile Include="Controllers\VolunteerRecruitmentController.cs" />
     <Compile Include="Data\HospitalProjectContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004121710035_conflicsolved.cs" />
-    <Compile Include="Migrations\202004121710035_conflicsolved.Designer.cs">
-      <DependentUpon>202004121710035_conflicsolved.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202004090410043_feedback.cs" />
     <Compile Include="Migrations\202004090410043_feedback.Designer.cs">
@@ -297,6 +295,10 @@
     <Compile Include="Migrations\202004102043040_contact-reply.cs" />
     <Compile Include="Migrations\202004102043040_contact-reply.Designer.cs">
       <DependentUpon>202004102043040_contact-reply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004132055395_parkandjob.cs" />
+    <Compile Include="Migrations\202004132055395_parkandjob.Designer.cs">
+      <DependentUpon>202004132055395_parkandjob.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -420,6 +422,7 @@
     <Content Include="Views\Parking\Delete.cshtml" />
     <Content Include="Views\Parking\Show.cshtml" />
     <Content Include="Views\Parking\Update.cshtml" />
+    <Content Include="Views\Parking\AdminList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -439,9 +442,6 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004121710035_conflicsolved.resx">
-      <DependentUpon>202004121710035_conflicsolved.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004090410043_feedback.resx">
       <DependentUpon>202004090410043_feedback.cs</DependentUpon>
     </EmbeddedResource>
@@ -459,6 +459,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004102043040_contact-reply.resx">
       <DependentUpon>202004102043040_contact-reply.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004132055395_parkandjob.resx">
+      <DependentUpon>202004132055395_parkandjob.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

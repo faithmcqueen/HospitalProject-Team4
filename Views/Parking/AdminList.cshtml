@@ -1,0 +1,49 @@
+﻿@model HospitalProject_Team4.Models.ViewModels.BookParkingSpot
+@{
+    ViewBag.Title = "AdminList";
+}
+
+<h2>All Current Bookings</h2>
+<div class="navbar">
+</div>
+<form action="/Parking/AdminList" method="GET">
+    <input type="text" name="bookingsearchkey" id="bookingsearchkey" />
+    <input type="submit" value="Search" />
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Booking Date</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Edits</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var spotbookings in Model.SpotBookings)
+        {
+        <tr>
+            <th scope="row"><a href="/Parking/Show/@spotbookings.SpotBookingID">@spotbookings.SpotBookingID</a></th>
+            <td>@spotbookings.BookingDate</td>
+            <td>@spotbookings.StartDate</td>
+            <td>@spotbookings.EndDate</td>
+            <td><a class="btn btn-secondary" href="/Parking/Update/@spotbookings.SpotBookingID">Update</a> <a class="btn btn-danger" href="/Parking/Delete/@spotbookings.SpotBookingID">Delete</a></td>
+        </tr>
+           
+        }
+    </tbody>
+</table>
+@*<div class="paginate">
+        @{
+            <a href="/Parking/List?pagenum=@((int)ViewData["pagenum"] - 1)&parksearchkey=@ViewData["parksearchkey"]">Prev</a>
+            @ViewData["pagesummary"]
+            <a href="/Parking/List?pagenum=@((int)ViewData["pagenum"] + 1)&parksearchkey=@ViewData["parksearchkey"]">Next</a>
+        }
+    </div>*@
+
+
+
+
+
+
