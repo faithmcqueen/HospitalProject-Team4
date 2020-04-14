@@ -67,7 +67,7 @@ namespace HospitalProject_Team4.Controllers
             else
             {
                 //Errors display
-                ViewBag.ErrorMessage = "Something Went Wrong!";
+                ViewBag.ErrorMessage = "There is some problem while Donating!";
                 ViewBag.Errors = new List<string>();
                 foreach (var error in result.Errors)
                 {

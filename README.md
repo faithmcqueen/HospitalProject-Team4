@@ -24,7 +24,6 @@
   
   - Feature Two : 
   1. Donation (CRUD - Add, view, update and delete Public View)
-
  
   | File | Description | Author |
   | ------- | ----------- | ----- |
@@ -80,3 +79,7 @@
   | Views/MessageCategory/UpdateMessageCategory.cshtml | This file will allow the admin to update the title of category. | Navjot Gill |
   | Views/MessageCategory/DeleteMessageCategory.cshtml | This file will allow the admin to delete the category from the database. | Navjot Gill |
   | Views/MessageCategory/ShowMessageCategory.cshtml | This file will allow the admin to view the details of selected category in non-editable format and it will also have links to delete and update the category . | Navjot Gill |
+  | Views/Donation/Add.cshtml | This file will allow a user to make donation by filling out a form. Also, it will do registration if the donor is not a registered user. | Shubham Patel |
+  | Views/Donation/List.cshtml | This file will list all the donors and it is managed by the admin. | Shubham Patel |
+  | Views/Donation/Update.cshtml | This file will allow the donors to edit their specific details. | Shubham Patel |
+  | Views/Donation/DeleteConfirm.cshtml | This file is a confirmation file before deleting any donor. Note that this access is only available to admin and no donor can modify each other details. | Shubham Patel |
