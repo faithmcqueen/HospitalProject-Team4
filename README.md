@@ -99,5 +99,5 @@
   | Views/AspNetUser/Add.cshtml | This file is the user interface where a user will register. | Bhanudai Khairwal |
   | Views/AspNetUser/List.cshtml | This file will list all the users which has links to update and delete. | Bhanudai Khairwal |
   | Views/AspNetUSer/Update.cshtml | This file will allow the user to edit any changes he wants before registering . | Bhanudai Khairwal |
-  | Views/AspNetUser/DeleteConfirm.cshtml | This file is a confirmation file before deleting any volunteer. | Bhanudai Khairwal |
+  | Views/AspNetUser/DeleteConfirm.cshtml | This file is a confirmation file before deleting any user. | Bhanudai Khairwal |
   
