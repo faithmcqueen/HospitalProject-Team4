@@ -6,33 +6,42 @@
 
 <h2>List of Donors</h2>
 <div class="navbar">
-    <a class="navlink" href="/Donation/Add">Add More</a>
+    <a class="navlink" href="/Donation/Add">Make Donation</a>
 </div>
 <form action="/Donation/List" method="GET">
     <input type="text" name="searchkey" id="searchkey" />
     <input type="submit" value="Search" />
 </form>
 <div class="tilecontainer">
-    @{
-        foreach (var Donation in Model)
-        {
-            <div class="listitem">
-           
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">User Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Donated on</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var Donation in Model)
+                {
+                    <tr>
+                        <th scope="row">
                             <a href="/Donation/Show/@Donation.DonationID">
                                 @Donation.ApplicationUser.UserName
                             </a>
-                               
-                <div class="itemdetails">
-                    <div class="listcat"> 
-                        <strong>Email  :</strong> @Donation.ApplicationUser.Email</div>
+                        </th>
 
-                    <div class="listcat"><strong>Amount :</strong> <span>@Donation.donation_amount</span></div>
-                    <div class="listcat"><strong>Donated on :</strong> <span>@Donation.donated_on</span></div>
-                    
-                </div>
-                <div style="clear:both;"></div>
-            </div>
-        }
-    }
-    <div style="clear:both;"></div>
-</div>
+                        <td> @Donation.ApplicationUser.Email</td>
+                        <td>@Donation.donation_amount</td>
+                        <td>@Donation.donated_on</td>
+
+                    </tr>
+                    }
+                }
+            </tbody>
+        </table>
+
+ </div>
+  
