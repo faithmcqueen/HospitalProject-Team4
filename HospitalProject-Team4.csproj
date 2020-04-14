@@ -258,6 +258,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AspNetUserController.cs" />
     <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
@@ -307,6 +308,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Application.cs" />
+    <Compile Include="Models\AspNetUser.cs" />
     <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Donation.cs" />
@@ -431,6 +433,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\VolunteerFiles\" />
+    <Folder Include="Views\AspNetUser\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

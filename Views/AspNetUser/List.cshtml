@@ -1,0 +1,37 @@
+﻿@model List<HospitalProject_Team4.Models.AspNetUser>
+
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List of Users</h2>
+<div class="navbar">
+    <a href="/AspNetUser/Add">Add A New User</a>
+</div>
+<form method="GET" action="/AspNetUser/List">
+    <input type="text" id="AspNetUsersearchkey" name="AspNetUsersearchkey" />
+    <input type="submit" value="Search" />
+</form>
+<div class="tilecontainer">
+    @{
+        foreach (var aspNetUser in @Model)
+        {
+
+            <div class="listitem">
+                <a href="/Aspnetuser/Show/@aspNetUser.user_id">@aspNetUser.first_name</a>
+               
+                <span class="list"> @aspNetUser.last_name</span>
+                <span class="list"> @aspNetUser.address</span>
+                <span class="list"> @aspNetUser.home_phone</span>
+                <span class="list"> @aspNetUser.cell_phone</span>
+                <span class="list">@aspNetUser.gender</span>
+                <span class="list">@aspNetUser.username</span>
+                <span class="list">@aspNetUser.password</span>
+
+
+                <a class="cta" href="/AspNetUser/Update/@aspNetUser.user_id">Update</a>
+            </div>
+        }
+    }
+</div>

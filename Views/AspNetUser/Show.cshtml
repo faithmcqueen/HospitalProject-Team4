@@ -1,0 +1,22 @@
+﻿@model HospitalProject_Team4.Models.AspNetUser
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show</h2>
+    <div class="navbar">
+        <a class="navlink" href="/AspNetUser/List">Back to List</a>
+        <a class="navlink" href="/AspNetUser/Update/@Model.user_id">Update</a>
+        <a class="navlink" href="/AspNetuser/DeleteConfirm/@Model.user_id">Delete</a>
+    </div>
+    <div>
+        <span>First Name: </span>@Model.first_name
+        <span>Last Name: </span>@Model.last_name
+        <span>Address: </span>@Model.address
+        <span>Home phone: </span>@Model.home_phone
+        <span>DOB: </span>@Model.dob
+        <span>Cell Phone: </span>@Model.cell_phone
+        <span>Gender: </span>@Model.gender
+        <span>Username: </span>@Model.username
+        <span>Password: </span>@Model.password
+    </div>

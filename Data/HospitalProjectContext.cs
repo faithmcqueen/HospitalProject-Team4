@@ -45,6 +45,7 @@ namespace HospitalProject_Team4.Data
             return new HospitalProjectContext();
         }
 
+        public System.Data.Entity.DbSet<HospitalProject_Team4.Models.AspNetUser> AspNet_User { get; set; }
         public System.Data.Entity.DbSet<HospitalProject_Team4.Models.Donation> Donation { get; set; }
         public System.Data.Entity.DbSet<HospitalProject_Team4.Models.FAQ> FAQs { get; set; }
 

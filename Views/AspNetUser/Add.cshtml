@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Add";
+}
+
+<!DOCTYPE html>
+
+<html>
+        <head>
+            <meta name="viewport" content="width=device-width" />
+            @Styles.Render("~/Content/css")
+            <title>Add New Users</title>
+        </head>
+        <body>
+
+            <h2>Add</h2>
+            <a href="/AspNetUser/List" class="navlink">Back to List</a>
+            <form method="POST" action="/AspNetUser/Add">
+
+                <div class="inpfield">
+                    <span>First Name:</span>
+                    <input type="text" id="first_name" name="first_name" />
+                </div>
+
+                <div class="inpfield">
+                    <span>Last Name:</span>
+                    <input type="text" id="last_name" name="last_name" />
+                </div>
+
+                <div class="inpfield">
+                    <span>Address:</span>
+                    <input type="text" id="address" name="address" />
+                </div>
+
+                <div class="inpfield">
+                    <span>Home phone:</span>
+                    <input type="text" id="home_phone" name="home_phone" />
+                </div>
+
+                <div class="inpfield">
+                    <span>DOB:</span>
+                    <input type="text" id="dob" name="dob" />
+                </div>
+
+                <div class="inpfield">
+                    <span>Cell Phone:</span>
+                    <input type="text" id="cell_phone" name="cell_phone" />
+                </div>
+
+                <div class="form-group">
+                    <span>Gender:</span>
+                    <input type="radio" name="gender" value="male" id="gen">Male
+                    <input type="radio" name="gender" value="female" id="gen">Female
+                    <input type="radio" name="gender" value="female" id="gen">Other
+                </div>
+
+                <div class="inpfield">
+                    <span>Username:</span>
+                    <input type="text" id="username" name="username" />
+                </div>
+
+                <div class="inpfield">
+                    <span>Password:</span>
+                    <input type="text" id="password" name="password" />
+                </div>
+
+                <div class="inpfield">
+                    <input type="submit" value="Add New User" />
+                </div>
+
+            </form>
+
+        </body>
+</html>
