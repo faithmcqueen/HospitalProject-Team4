@@ -1,0 +1,22 @@
+﻿Job Portal
+ERD Justifications:
+One user can make many applications, one application can only belong to one user
+One job posting can have many applications, one application can only be for one job posting
+One job posting can have one department, one department can have many job postings.
+
+
+User Story:
+Jane recently graduated from nursing school and is looking for work. She and her family recently moved to the Riverside region and she knows she wants to work in one of the hospital branches. She visits the Riverside Health Care website and selects the “Join Our Team” menu button. 
+
+
+When she arrives on the page, she can select from a list of departments that currently have open listings. Under the selected department will be a list of open job postings. Each job posting includes the job title, description, and application deadline. Under the text of the job posting is a button to apply, which takes Jane to the login screen. Jane is not a registered user, so she creates a user account. After successfully logging in, she can see the application form page. Here, Jane fills out her information and attaches her resume before clicking “Apply” to submit the form. Once the form is submitted successfully she receives the following success message: “Thank you for applying! If you are selected for an interview, a member of the department will contact you within 72 hours.”
+
+
+Parking Spot Booking
+ERD Justifications:
+One user can make many bookings, one booking can only have one user
+One booking can only have one spot, one spot can be booked many times
+
+
+User Story:
+John is visiting his mother in the hospital, and he needs to book a parking space for when he gets there. John goes to the Riverside Health Care website to book his parking space online, and navigating to the Parking Space Booking page. He can see a list of lots, with a list of available spots that he can book. He selects which spot he wishes to book, and clicks the “Book” button. On the button click, he is redirected to the Log In screen. John is a registered user, so he logs in. Now that he is logged in, he fills out the form with the information on start and end dates/time for the booking. When he clicks “Book” he’s taken to a payment window, where he enters his payment information and it is processed through PayPal. Once the payment has successfully gone through, he receives a success message that says “Thank you for booking Spot 33 in Lot A. This spot has been selected from 12:30-5:30pm on Friday, March 31, 2020.”
